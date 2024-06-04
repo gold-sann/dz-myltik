@@ -1,7 +1,7 @@
 #include "TXLib.h"
 
 int kitay_drow (int x, int y);
-int drow_mer (int x);
+int drow_mer (int x, int y);
 int drow_russ (int x);
 int drow_poezd (int x);
 int drow_camolet (int x, int y);
@@ -12,14 +12,14 @@ int main()
 
     txCreateWindow (1300, 600);
 
-    for (int x = 50, y = -15, xcam = 1000, ycam = -15, xkit = 300, ykit = 400, right_left = 1; x < 300; x++, y++, xcam -= 5, ycam += 2, xkit -= 3, ykit -= 2, right_left *= -10)
+    for (int x = 50, y = -15, xcam = 1000, ycam = -15, xkit = 300, ykit = 400, right_left = 1, xmer = 1300, ymer = 475; x < 300; x++, y++, xcam -= 5, ycam += 2, xkit -= 3, ykit -= 2, right_left *= -10, xmer++, ymer-= 0)
 
         {
         txSetFillColor (TX_BLACK);                                                                                          //5 * -1= -5,-5*-1=5*-1=-5*-1=5
         txClear();
 
         drow_poezd (x * 4);
-        drow_mer (x * 4);
+        drow_mer (x * 4, ymer);
         drow_russ (x * 4);
         kitay_drow (xkit, ykit);
         drow_camolet (xcam , ycam);
@@ -57,19 +57,21 @@ int kitay_drow (int x, int y)
 
     }
 
-int drow_mer (int x)
+int drow_mer (int x, int y)
     {
 
     txSetFillColor (TX_WHITE);
     txSetColor (TX_WHITE);
-    txLine (525 + x, 600, 650 + x, 600);
-    txLine (650 + x, 600, 675 + x, 475);
-    txCircle (675 + x, 475, 100);
-    txLine (725 + x, 600, 700 + x, 475);
-    txCircle (675 + x, 375, 50);
-    txLine (675 + x, 325, 650 + x, 325);
-    txLine (650 + x, 450, 550 + x, 450);
-    txLine (750 + x, 450, 800 + x, 450);
+    txLine (525 - 880 + x, 600 -  475 + y, 650 - 880 + x, 600);
+    txLine (650 - 880 + x, 600 -  475 + y, 675 - 880 + x, 475);
+    txCircle (675 - 880 + x, 475 -  475 + y, 100);
+    txLine (725 - 880 + x, 600 -  475 + y, 700 - 880 + x, 475);
+    txCircle (675 - 880 + x, 375 -  475 + y, 50);
+    txLine (675 - 880 + x, 325 -  475 + y, 650 - 880 + x, 325);
+    txLine (650 - 880 + x, 450 -  475 + y, 550 - 880 + x, 450);
+    txLine (750 - 880 + x, 450 -  475 + y, 800 - 880 + x, 450);
+    txSetFillColor (TX_BLACK);
+    txCircle (880 - 880 + x, 475 -  475 + y, 15);
 
     return 0;
 
@@ -78,15 +80,17 @@ int drow_mer (int x)
 int drow_russ (int x)
     {
 
+    txSetFillColor (TX_RED);
+    txCircle (1150, 450, 15);
     txSetFillColor (TX_BLUE);
     txSetColor (TX_BLUE);
-    txLine (900 + x, 600, 925 + x, 500);
-    txLine (925 + x, 500, 850 + x, 450);
-    txLine (850 + x, 450, 950 + x, 350);
-    txCircle (950 + x, 350, 30);
-    txLine (980 + x, 350, 980 + x, 500);
-    txCircle (980 + x, 500, 20);
-    txLine (980 + x, 500, 980 + x, 600);
+    txLine (900 - 1150 + x, 600, 925 - 1150 + x, 500);
+    txLine (925 - 1150 + x, 500, 850 - 1150 + x, 450);
+    txLine (850 - 1150 + x, 450, 950 - 1150 + x, 350);
+    txCircle (950 - 1150 + x, 350, 30);
+    txLine (980 - 1150 + x, 350, 980 - 1150 + x, 500);
+    txCircle (980 - 1150 + x, 500, 20);
+    txLine (980 - 1150 + x, 500, 980 - 1150 + x, 600);
 
     return 0;
 
