@@ -6,6 +6,7 @@ int drow_comp();
 int drow_miscaar();
 int drow_lest (int x, int y);
 int drow_lest_6();
+int drow_lestnica52 (int x, int y);
 
 int main()
     {
@@ -188,12 +189,27 @@ int drow_lest (int x, int y)
 
 int drow_lest_6()
     {
-    drow_lest (400, 400);
-    drow_lest (455, 345);
-    drow_lest (510, 290);
-    drow_lest (565, 235);
-    drow_lest (620, 180);
-    drow_lest (620 + 55, 180 - 55);
+    drow_lestnica52 (400, 400);
+    drow_lestnica52 (455, 345);
+    drow_lestnica52 (510, 290);
+    drow_lestnica52 (565, 235);
+    drow_lestnica52 (620, 180);
+    drow_lestnica52 (620 + 55, 180 - 55);
+
+    return 0;
+
+    }
+
+int drow_lestnica52 (int x, int y)
+    {
+    txLine (4 + x, 363 - 327 + y, 540 - 360 + x, 422 - 327 + y);
+    txLine (180 + x, 422 - 327 + y, 538 - 360 + x, 380 - 327 + y);
+    txLine (178 + x, 380 - 327 + y, 359 - 360 + x, 329 - 327 + y);
+    txLine (-1 + x, 329 - 327 + y, 359 - 360 + x, 363 - 327 + y);
+    txLine (-1 + x, 329 - 327 + y, 418 - 360 + x, 313 - 327 + y);
+    txLine (58 + x, 313 - 327 + y, 590 - 360 + x, 367 - 327 + y);
+    txLine (230 + x, 367 - 327 + y, 540 - 360 + x, 377 - 327 + y);
+    txCircle (x, 327 - 327 + y, 10);
 
     return 0;
 
