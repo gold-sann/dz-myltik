@@ -1,23 +1,27 @@
 #include "TXLib.h"
 
-int drow_cat();
+int drow_cat (double x, double y, double size_x, double size_y);
 int drow_misca();
 int drow_comp();
 int drow_miscaar();
-int drow_lest (int x, int y);
-int drow_lest_6();
-int drow_lestnica52 (int x, int y);
+int drow_lest (double x, double y);
+int drow_lest_6 (double x, double y, double size_x, double size_y);
+int drow_lestnica52 (double x, double y, double size_x, double size_y);
+int drow_stive();
 
 int main()
     {
 
     txCreateWindow (1800, 1000);
 
-    drow_cat();
+    /*drow_cat (300, 280, 0.5, 0.5);
     drow_misca();
     drow_comp();
     drow_miscaar();
-    drow_lest_6();
+    drow_lest_6 (500, 500, 1.5, 1.5);*/
+    drow_stive();
+    //drow_lest_6 (400, 400, -0.5, 1.5);
+
     //for (int t = 50; t < 250; t++)
         //{
         //txSetFillColor (TX_BLACK);
@@ -31,52 +35,54 @@ int main()
     }
 
 
-int drow_cat()
+int drow_cat (double x, double y, double size_x, double size_y)
     {
 
-    txLine (16,  437,  4,   405);
-    txLine (4,   405,  32,  332);
-    txLine (32,  332,  68,  306);
-    txLine (68,  306,  111, 225);
-    txLine (111, 225,  58,  160);
-    txLine (58,  160,  41,   89);
-    txLine (41,  89,   18,   53);
-    txLine (18,  53,   48,   59);
-    txLine (48,  59,   72,   90);
-    txLine (72,  90,   92,  149);
-    txLine (92,  149,  156, 205);
-    txLine (156, 205,  202, 191);
-    txLine (202, 191,  353, 215);
-    txLine (353, 215,  396, 216);
-    txLine (396, 216,  405, 224);
-    txLine (405, 224,  464, 217);
-    txLine (464, 217,  533, 189);
-    txLine (533, 189,  514, 217);
-    txLine (514, 217,  538, 237);
-    txLine (538, 237,  549, 283);
-    txLine (549, 283,  523, 300);
-    txLine (523, 300,  487, 292);
-    txLine (487, 292,  467, 302);
-    txLine (467, 302,  480, 318);
-    txLine (480, 318,  487, 350);
-    txLine (488, 352,  554, 420);
-    txLine (554, 420,  574, 429);
-    txLine (574, 429,  577, 444);
-    txLine (577, 444,  541, 445);
-    txLine (541, 445,  401, 342);
-    txLine (401, 342,  200, 349);
-    txLine (200, 349,  170, 393);
-    txLine (170, 393,  189, 421);
-    txLine (189, 421,  210, 428);
-    txLine (210, 428,  215, 444);
-    txLine (215, 444,  176, 445);
-    txLine (176, 445,  125, 396);
-    txLine (125, 396,  136, 350);
-    txLine (136, 350,  134, 345);
-    txLine (134, 345,  56,  364);
-    txLine (56,  364,  30,  407);
-    txLine (30,  407,  32,  428);
-    txLine (32,  428,  16,  437);
+    txLine ((16  - 300) * size_x + x, (437 - 280) * size_y + y, (4   - 300) * size_x + x, (405 - 280) * size_y + y);
+    txLine ((4   - 300) * size_x + x, (405 - 280) * size_y + y, (32  - 300) * size_x + x, (332 - 280) * size_y + y);
+    txLine ((32  - 300) * size_x + x, (332 - 280) * size_y + y, (68  - 300) * size_x + x, (306 - 280) * size_y + y);
+    txLine ((68  - 300) * size_x + x, (306 - 280) * size_y + y, (111 - 300) * size_x + x, (225 - 280) * size_y + y);
+    txLine ((111 - 300) * size_x + x, (225 - 280) * size_y + y, (58  - 300) * size_x + x, (160 - 280) * size_y + y);
+    txLine ((58  - 300) * size_x + x, (160 - 280) * size_y + y, (41  - 300) * size_x + x, (89  - 280) * size_y + y);
+    txLine ((41  - 300) * size_x + x, (89  - 280) * size_y + y, (18  - 300) * size_x + x, (53  - 280) * size_y + y);
+    txLine ((18  - 300) * size_x + x, (53  - 280) * size_y + y, (48  - 300) * size_x + x, (59  - 280) * size_y + y);
+    txLine ((48  - 300) * size_x + x, (59  - 280) * size_y + y, (72  - 300) * size_x + x, (90  - 280) * size_y + y);
+    txLine ((72  - 300) * size_x + x, (90  - 280) * size_y + y, (92  - 300) * size_x + x, (149 - 280) * size_y + y);
+    txLine ((92  - 300) * size_x + x, (149 - 280) * size_y + y, (156 - 300) * size_x + x, (205 - 280) * size_y + y);
+    txLine ((156 - 300) * size_x + x, (205 - 280) * size_y + y, (202 - 300) * size_x + x, (191 - 280) * size_y + y);
+    txLine ((202 - 300) * size_x + x, (191 - 280) * size_y + y, (353 - 300) * size_x + x, (215 - 280) * size_y + y);
+    txLine ((353 - 300) * size_x + x, (215 - 280) * size_y + y, (396 - 300) * size_x + x, (216 - 280) * size_y + y);
+    txLine ((396 - 300) * size_x + x, (216 - 280) * size_y + y, (405 - 300) * size_x + x, (224 - 280) * size_y + y);
+    txLine ((405 - 300) * size_x + x, (224 - 280) * size_y + y, (464 - 300) * size_x + x, (217 - 280) * size_y + y);
+    txLine ((464 - 300) * size_x + x, (217 - 280) * size_y + y, (533 - 300) * size_x + x, (189 - 280) * size_y + y);
+    txLine ((533 - 300) * size_x + x, (189 - 280) * size_y + y, (514 - 300) * size_x + x, (217 - 280) * size_y + y);
+    txLine ((514 - 300) * size_x + x, (217 - 280) * size_y + y, (538 - 300) * size_x + x, (237 - 280) * size_y + y);
+    txLine ((538 - 300) * size_x + x, (237 - 280) * size_y + y, (549 - 300) * size_x + x, (283 - 280) * size_y + y);
+    txLine ((549 - 300) * size_x + x, (283 - 280) * size_y + y, (523 - 300) * size_x + x, (300 - 280) * size_y + y);
+    txLine ((523 - 300) * size_x + x, (300 - 280) * size_y + y, (487 - 300) * size_x + x, (292 - 280) * size_y + y);
+    txLine ((487 - 300) * size_x + x, (292 - 280) * size_y + y, (467 - 300) * size_x + x, (302 - 280) * size_y + y);
+    txLine ((467 - 300) * size_x + x, (302 - 280) * size_y + y, (480 - 300) * size_x + x, (318 - 280) * size_y + y);
+    txLine ((480 - 300) * size_x + x, (318 - 280) * size_y + y, (487 - 300) * size_x + x, (350 - 280) * size_y + y);
+    txLine ((488 - 300) * size_x + x, (352 - 280) * size_y + y, (554 - 300) * size_x + x, (420 - 280) * size_y + y);
+    txLine ((554 - 300) * size_x + x, (420 - 280) * size_y + y, (574 - 300) * size_x + x, (429 - 280) * size_y + y);
+    txLine ((574 - 300) * size_x + x, (429 - 280) * size_y + y, (577 - 300) * size_x + x, (444 - 280) * size_y + y);
+    txLine ((577 - 300) * size_x + x, (444 - 280) * size_y + y, (541 - 300) * size_x + x, (445 - 280) * size_y + y);
+    txLine ((541 - 300) * size_x + x, (445 - 280) * size_y + y, (401 - 300) * size_x + x, (342 - 280) * size_y + y);
+    txLine ((401 - 300) * size_x + x, (342 - 280) * size_y + y, (200 - 300) * size_x + x, (349 - 280) * size_y + y);
+    txLine ((200 - 300) * size_x + x, (349 - 280) * size_y + y, (170 - 300) * size_x + x, (393 - 280) * size_y + y);
+    txLine ((170 - 300) * size_x + x, (393 - 280) * size_y + y, (189 - 300) * size_x + x, (421 - 280) * size_y + y);
+    txLine ((189 - 300) * size_x + x, (421 - 280) * size_y + y, (210 - 300) * size_x + x, (428 - 280) * size_y + y);
+    txLine ((210 - 300) * size_x + x, (428 - 280) * size_y + y, (215 - 300) * size_x + x, (444 - 280) * size_y + y);
+    txLine ((215 - 300) * size_x + x, (444 - 280) * size_y + y, (176 - 300) * size_x + x, (445 - 280) * size_y + y);
+    txLine ((176 - 300) * size_x + x, (445 - 280) * size_y + y, (125 - 300) * size_x + x, (396 - 280) * size_y + y);
+    txLine ((125 - 300) * size_x + x, (396 - 280) * size_y + y, (136 - 300) * size_x + x, (350 - 280) * size_y + y);
+    txLine ((136 - 300) * size_x + x, (350 - 280) * size_y + y, (134 - 300) * size_x + x, (345 - 280) * size_y + y);
+    txLine ((134 - 300) * size_x + x, (345 - 280) * size_y + y, (56  - 300) * size_x + x, (364 - 280) * size_y + y);
+    txLine ((56  - 300) * size_x + x, (364 - 280) * size_y + y, (30  - 300) * size_x + x, (407 - 280) * size_y + y);
+    txLine ((30  - 300) * size_x + x, (407 - 280) * size_y + y, (32  - 300) * size_x + x, (428 - 280) * size_y + y);
+    txLine ((32  - 300) * size_x + x, (428 - 280) * size_y + y, (16  - 300) * size_x + x, (437 - 280) * size_y + y);
+
+    txCircle ((300 - 300) + x, 280 - 280 + y, 10);
 
     return 0;
 
@@ -172,7 +178,7 @@ int drow_miscaar()
 
     }
 
-int drow_lest (int x, int y)
+int drow_lest (double x, double y)
     {
     txLine (364 - 360 + x, 363 - 327 + y, 540 - 360 + x, 422 - 327 + y);
     txLine (540 - 360 + x, 422 - 327 + y, 538 - 360 + x, 380 - 327 + y);
@@ -187,31 +193,78 @@ int drow_lest (int x, int y)
 
     }
 
-int drow_lest_6()
+int drow_lest_6 (double x, double y, double size_x, double size_y)
     {
-    drow_lestnica52 (400, 400);
-    drow_lestnica52 (455, 345);
-    drow_lestnica52 (510, 290);
-    drow_lestnica52 (565, 235);
-    drow_lestnica52 (620, 180);
-    drow_lestnica52 (620 + 55, 180 - 55);
+    drow_lestnica52 (0   * size_x + x, 0    * size_y + y, size_x, size_y);
+    drow_lestnica52 (55  * size_x + x, -55  * size_y + y, size_x, size_y);
+    drow_lestnica52 (110 * size_x + x, -110 * size_y + y, size_x, size_y);
+    drow_lestnica52 (165 * size_x + x, -165 * size_y + y, size_x, size_y);
+    drow_lestnica52 (220 * size_x + x, -220 * size_y + y, size_x, size_y);
+    drow_lestnica52 (275 * size_x + x, -275 * size_y + y, size_x, size_y);
+    txSetFillColor  (TX_GREEN);
+    txCircle        (0   * size_x + x, 0    * size_y + y, 10);
+
+
+    return 0;
+
+    }
+int drow_lestnica52 (double x, double y, double size_x, double size_y)
+    {
+    txLine (4   * size_x + x, 36  * size_y + y, 180 * size_x + x, 95  * size_y + y);
+    txLine (180 * size_x + x, 95  * size_y + y, 178 * size_x + x, 53  * size_y + y);
+    txLine (178 * size_x + x, 53  * size_y + y, -1  * size_x + x, 2   * size_y + y);
+    txLine (-1  * size_x + x, 2   * size_y + y, -1  * size_x + x, 36  * size_y + y);
+    txLine (-1  * size_x + x, 2   * size_y + y, 58  * size_x + x, -14 * size_y + y);
+    txLine (58  * size_x + x, -14 * size_y + y, 230 * size_x + x, 40  * size_y + y);
+    txLine (230 * size_x + x, 40  * size_y + y, 180 * size_x + x, 50  * size_y + y);
+    txSetFillColor (TX_RED);
+    txCircle (0 * size_x + x, 0 * size_y + y, 10);
 
     return 0;
 
     }
 
-int drow_lestnica52 (int x, int y)
+int drow_stive()
     {
-    txLine (4 + x, 363 - 327 + y, 540 - 360 + x, 422 - 327 + y);
-    txLine (180 + x, 422 - 327 + y, 538 - 360 + x, 380 - 327 + y);
-    txLine (178 + x, 380 - 327 + y, 359 - 360 + x, 329 - 327 + y);
-    txLine (-1 + x, 329 - 327 + y, 359 - 360 + x, 363 - 327 + y);
-    txLine (-1 + x, 329 - 327 + y, 418 - 360 + x, 313 - 327 + y);
-    txLine (58 + x, 313 - 327 + y, 590 - 360 + x, 367 - 327 + y);
-    txLine (230 + x, 367 - 327 + y, 540 - 360 + x, 377 - 327 + y);
-    txCircle ( +x, 327 - 327 + y, 10);
+    txLine (385, 148, 604, 236); //рука
+    txLine (604, 236, 588, 236);
+    txLine (592, 240, 364, 150);
+    txLine (364, 150, 336, 224);
+    txLine (336, 224, 560, 319);
+    txLine (560, 319, 577, 312);
+    txLine (577, 312, 605, 238);
+    txLine (590, 241, 563, 319);
+
+    txLine (450, 175, 460, 366); //туловеще
+    txLine (460, 366, 338, 379);
+    txLine (338, 379, 337, 175);
+    txLine (337, 175, 450, 175);
+    txLine (412, 378, 412, 195);
+
+    //txLine (412, 380, 388, 380);
+    //txLine (388, 380, 388, 193);
+    //txLine (388, 193, 347, 191);
+
+    txSetColor (TX_WHITE);
+    txLine (337, 379, 339, 645); //ноги
+    txLine (339, 645, 418, 647);
+    txLine (411, 647, 411, 383);
+    txLine (411, 383, 430, 383);
+    txLine (430, 383, 431, 632);
+    txLine (431, 632, 449, 613);
+    txLine (449, 613, 449, 365);
+    txLine (449, 365, 411, 381);
+    txLine (411, 381, 337, 379);
 
     return 0;
 
+    }
+    
+int drow_golova_stiva()
+    {
+    
+    
+    return 0;
+    
     }
 
