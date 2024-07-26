@@ -103,9 +103,31 @@ int sen_22()
         txSetFillColor (TX_BLACK);
         txClear();
 
-       drow_stive (400 + 3 * t, 600,
+       drow_cat (1445, 202 + t * 1,
+                  1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
+                  57, 50,                                                    // 2 / 250 = 2.0 / 250.0
+                  5,
+                  11, 11,
+                  67);
+
+       drow_stive (400 + 3.5 * t, 600,
                     1, 1,
                     57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
+
+
+
+        txSleep (20);
+        }
+
+    return 0;
+    }
+    
+int sen_223()
+    {
+    for (int t = 0; t < 250; t++)
+        {
+        txSetFillColor (TX_BLACK);
+        txClear();
 
        drow_cat (1445, 202 + t * 1,
                   1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
@@ -113,6 +135,10 @@ int sen_22()
                   5,
                   11, 11,
                   67);
+
+       drow_stive (400 + 3.5 * t, 600,
+                    1, 1,
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
 
 
 
@@ -372,7 +398,7 @@ int drow_stive (double x, double y, double size_x, double size_y, double slide_s
     double x0 = 800;
 
     txLine (325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
-    printf ("x1 = %lg, y1 = %lg, x2 = %lg, y2 = %lg\n",325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
+    //printf ("x1 = %lg, y1 = %lg, x2 = %lg, y2 = %lg\n",325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
 
     txLine (467 + x + x0, 18  + y + y0, 490 + x + x0, 168 + y + y0);
     txLine (490 + x + x0, 168 + y + y0, 336 + x + x0, 189 + y + y0);

@@ -14,6 +14,7 @@ int drow_leni (int y, const char text[], int color);
 int sen_1();
 int sen_2();
 int sen_22();
+int sen_223();
 
 int main()
     {
@@ -28,7 +29,7 @@ int main()
     //drow_lest_6 (500, 500, 1.5, 1.5);
     //drow_stive(400, 270, 1, 1, 57, 50);
     //drow_lest_6 (400, 400, -0.5, 1.5);
-    sen_22();
+    sen_223();
 
     return 0;
 
@@ -103,16 +104,42 @@ int sen_22()
         txSetFillColor (TX_BLACK);
         txClear();
 
-       drow_stive (400 + 3 * t, 600,
-                    1, 1,
-                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
-
        drow_cat (1445, 202 + t * 1,
                   1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
                   57, 50,                                                    // 2 / 250 = 2.0 / 250.0
                   5,
                   11, 11,
                   67);
+
+       drow_stive (400 + 3.5 * t, 600,
+                    1, 1,
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
+
+
+
+        txSleep (20);
+        }
+
+    return 0;
+    }
+
+int sen_223()
+    {
+    for (int t = 0; t < 250; t++)
+        {
+        txSetFillColor (TX_BLACK);
+        txClear();
+
+       drow_cat (1445, 451 + 50 - 100,
+                  1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
+                  57, 50,                                                    // 2 / 250 = 2.0 / 250.0
+                  5,
+                  11, 11,
+                  67);
+
+       drow_stive (1271, 600,
+                    1, 1,
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
 
 
 
@@ -127,7 +154,7 @@ int sen_22()
 int drow_cat (double x, double y, double size_x, double size_y, double slide_leg, double slide_y,  double slide_yxa, double slide_nos_y, double slide_nos_x, double slide_leg_ggo)
     {
 
-    //printf ("x = %lg, y = %lg\n", x, y);
+    printf ("x = %lg, y = %lg\n", x, y);
 
     txSetColor (TX_YELLOW, Tolshina); txLine ((16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y, (4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y);
     txSetColor (TX_ORANGE, Tolshina); txLine ((4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y);
@@ -337,6 +364,7 @@ int drow_lestnica52 (double x, double y, double size_x, double size_y)
 
 int drow_stive (double x, double y, double size_x, double size_y, double slide_ster, double slide_sten)
     {
+    //printf ("x = %lg, y = %lg\n", x, y);
     txSetColor (TX_YELLOW, Tolshina); txLine (-15 * size_x + x, -122 * size_y + y, 204 * size_x + x, -34 - slide_ster * size_y + y); //рука
     txSetColor (TX_ORANGE, Tolshina); txLine (204 * size_x + x, -34 - slide_ster * size_y + y, 188 * size_x + x, -34 - slide_ster * size_y + y);
     txSetColor (TX_BROWN,  Tolshina); txLine (192 * size_x + x, -30 - slide_ster * size_y + y, -36 * size_x + x, -120 * size_y + y);
@@ -372,7 +400,7 @@ int drow_stive (double x, double y, double size_x, double size_y, double slide_s
     double x0 = 800;
 
     txLine (325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
-    printf ("x1 = %lg, y1 = %lg, x2 = %lg, y2 = %lg\n",325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
+    //printf ("x1 = %lg, y1 = %lg, x2 = %lg, y2 = %lg\n",325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
 
     txLine (467 + x + x0, 18  + y + y0, 490 + x + x0, 168 + y + y0);
     txLine (490 + x + x0, 168 + y + y0, 336 + x + x0, 189 + y + y0);
