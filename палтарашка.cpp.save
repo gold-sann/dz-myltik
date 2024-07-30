@@ -15,7 +15,11 @@ int sen_1();
 int sen_2();
 int sen_22();
 int sen_223();
+int sen_224();
+int sen_225();
 int sen_3();
+int sen_31();
+int sen_conec();
 
 int main()
     {
@@ -30,7 +34,15 @@ int main()
     //drow_lest_6 (500, 500, 1.5, 1.5);
     //drow_stive(400, 270, 1, 1, 57, 50);
     //drow_lest_6 (400, 400, -0.5, 1.5);
+    sen_1();
+    sen_2();
+    sen_22();
+    sen_223();
+    sen_224();
+    sen_225();
     sen_3();
+    sen_31();
+    sen_conec();
 
     return 0;
 
@@ -51,7 +63,7 @@ int sen_1()
                      2, 2,
                      5);                                                    // 7 / 2 = ч3 (о1), ч3 * 2 + о1 = 7
                                                                       // 1 / 2 = ч0 (о0), ч0 * 2 + о0 = 0
-        drow_cat (200 + 5 * t, 700 + 2 * t,                           // 1 / 2 = ч1 (о0), ч1 * 2 + о0 = 2
+        drow_cat (200 + 5 * t, 700 - 2 * t,                           // 1 / 2 = ч1 (о0), ч1 * 2 + о0 = 2
                   -1, 1,                                               // 1 / 2 = ч0 (о1), ч0 * 2 + о1 = 1
                   30 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,                                      //
                   5 - (t / 6) % 2 * 10,                                    //   t           =  0 1 2 3 4 5 6 7 8 9 10
@@ -126,12 +138,12 @@ int sen_22()
 
 int sen_223()
     {
-    for (int t = 0; t < 250; t++)
+    for (int t = 0; t < 100; t++)
         {
         txSetFillColor (TX_BLACK);
         txClear();
 
-       drow_cat (1445, 451,
+       drow_cat (1445, 451 - t,
                   1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
                   57, 50,                                                    // 2 / 250 = 2.0 / 250.0
                   5,
@@ -150,27 +162,49 @@ int sen_223()
     return 0;
     }
 
-
-int sen_3()
+int sen_224()
     {
-    for (int t = 0; t < 250; t++)
+    for (int t = 0; t < 100; t++)
         {
         txSetFillColor (TX_BLACK);
         txClear();
 
-       drow_cat (800 + 3 * t, 800,
+        drow_cat (1445 + 1 * t, 451 + 3 * t,
                   1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
-                  57 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,
-                  5 - (t / 6) % 2 * 10,                          // 2 / 250 = 2.0 / 250.0,
+                  57, 50,                                                    // 2 / 250 = 2.0 / 250.0
+                  5,
                   11, 11,
-                  67);
+                  67 - (t / 2) % 2 * 15);
 
-       /*drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
+        drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
                     1, 1,                                                                   //1445 кордината кошки на руках по x
-                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);*/
-                    
-        drow_comp (1600, 400,
-                   
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
+
+
+
+        txSleep (20);
+        }
+
+    return 0;
+    }
+
+int sen_225()
+    {
+    for (int t = 0; t < 180; t++)
+        {
+        txSetFillColor (TX_BLACK);
+        txClear();
+
+        drow_cat (1544 + 6 * t, 748,
+                  1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
+                  57, 50,                                                    // 2 / 250 = 2.0 / 250.0
+                  5,
+                  11, 11,
+                  67 - (t / 2) % 2 * 15);
+
+        drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
+                    1, 1,                                                                   //1445 кордината кошки на руках по x
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
 
 
 
@@ -182,14 +216,100 @@ int sen_3()
 
 
 
+
+int sen_3()
+    {
+    for (int t = 0; t < 150; t++)
+        {
+        txSetFillColor (TX_BLACK);
+        txClear();
+
+       drow_cat (800 + 1 * t, 800,
+                  1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
+                  57 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,
+                  5 - (t / 6) % 2 * 10,                          // 2 / 250 = 2.0 / 250.0,
+                  11, 11,
+                  67);
+
+       /*drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
+                    1, 1,                                                                   //1445 кордината кошки на руках по x
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);*/
+
+        drow_comp (1600, 500,
+                   1, 1);
+
+
+
+        txSleep (20);
+        }
+
+    return 0;
+    }
+
+int sen_31()
+    {
+    for (int t = 0; t < 80; t++)
+        {
+        txSetFillColor (TX_BLACK);
+        txClear();
+
+        drow_comp (1600, 500,
+                   1, 1);
+
+       drow_cat (949 + 7 * t, 800 - 5 * t,
+                  1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
+                  57 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,
+                  5 - (t / 6) % 2 * 10,                          // 2 / 250 = 2.0 / 250.0,
+                  11, 11,
+                  67);
+
+       drow_leni (900,
+                   "мяяяу *храп",
+                   RGB (t, t / 5, t / 7));
+
+       /*drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
+                    1, 1,                                                                   //1445 кордината кошки на руках по x
+                    57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);*/
+
+        txSleep (20);
+        }
+
+    return 0;
+    }
+
+int sen_conec()
+    {
+    for (int t = 0; t < 80; t++)
+        {
+        txSetFillColor (TX_BLACK);
+        txClear();
+
+        drow_leni (500,
+                   "вот и сказочке конец",
+                   RGB (t, t / 2, t / 3));
+
+        drow_leni (700,
+                   "а кто видел молодец!!!",
+                   RGB (t, t / 2, t / 3));
+
+        txSleep (20);
+        }
+
+    return 0;
+    }
+
+
+
+
 int drow_cat (double x, double y, double size_x, double size_y, double slide_leg, double slide_y,  double slide_yxa, double slide_nos_y, double slide_nos_x, double slide_leg_ggo)
     {
 
-    printf ("x = %lg, y = %lg\n", x, y);
+    //printf ("x = %lg, y = %lg\n", x, y);
 
     txSetColor (TX_YELLOW, Tolshina); txLine ((16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y, (4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y);
     txSetColor (TX_ORANGE, Tolshina); txLine ((4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y);
     txSetColor (TX_WHITE,  Tolshina); txLine ((32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y, (68  - 300) * size_x + x, (306 - 280) * size_y + y);
+    txSetColor (TX_ORANGE, Tolshina);
     txLine ((68  - 300) * size_x + x, (306 - 280) * size_y + y, (111 - 300) * size_x + x, (225 - 280) * size_y + y);
     txLine ((111 - 300) * size_x + x, (225 - 280) * size_y + y, (58  - 300) * size_x + x, (160 - 280) * size_y + y);
     txLine ((58  - 300) * size_x + x, (160 - 280) * size_y + y, (41  - 300) * size_x + x, (89  - 280) * size_y + y);
@@ -219,7 +339,7 @@ int drow_cat (double x, double y, double size_x, double size_y, double slide_leg
     txLine ((480 - 300)                    * size_x + x, (318 - 280)           * size_y + y, (487 - 300 - slide_leg * 0.3) * size_x + x, (350 - 280 - slide_y * 0.9) * size_y + y); // переняя нога
     txLine ((488 - 300 - slide_leg  * 0.3) * size_x + x, (352 - 280 - slide_y) * size_y + y, (554 - 300 - slide_leg)       * size_x + x, (420 - 280 - slide_y * 1)   * size_y + y);
     txLine ((554 - 300 - slide_leg)        * size_x + x, (420 - 280 - slide_y) * size_y + y, (574 - 300 - slide_leg)       * size_x + x, (429 - 280 - slide_y * 1)   * size_y + y);
-    txLine ((574 - 300 - slide_leg)        * size_x + x, (429 - 280 - slide_y) * size_y + y, (577 - 300 - slide_leg)       * size_x + x, (444 - 280 - slide_y * 1)   * size_y + y); txCircle ((577 - 300) * size_x + x, (444 - 280) * size_y + y, 5);
+    txLine ((574 - 300 - slide_leg)        * size_x + x, (429 - 280 - slide_y) * size_y + y, (577 - 300 - slide_leg)       * size_x + x, (444 - 280 - slide_y * 1)   * size_y + y); txCircle ((577 - 300) * size_x + x, (444 - 280) * size_y + y, 30);
     txLine ((577 - 300 - slide_leg)        * size_x + x, (444 - 280 - slide_y) * size_y + y, (541 - 300 - slide_leg)       * size_x + x, (445 - 280 - slide_y * 1)   * size_y + y); //   точка пятки txCircle ((541 - 300) * size_x + x, (445 - 280) * size_y + y, 5);
     txLine ((541 - 300 - slide_leg)        * size_x + x, (445 - 280 - slide_y) * size_y + y, (401 - 300)                   * size_x + x, (342 - 280 - slide_y * 0.1) * size_y + y);
 
@@ -244,8 +364,9 @@ int drow_cat (double x, double y, double size_x, double size_y, double slide_leg
     txSetColor (TX_WHITE,      Tolshina); txLine ((56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y, (30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y);
     txSetColor (TX_LIGHTGREEN, Tolshina); txLine ((30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y);            //txSetColor (TX_, 3);
     txSetColor (TX_LIGHTBLUE,  Tolshina); txLine ((32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y, (16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y);
+    txSetColor (TX_LIGHTBLUE, Tolshina);
 
-    txCircle ((300 - 300) + x, 280 - 280 + y, 10);
+    //txCircle ((300 - 300) + x, 280 - 280 + y, 10);
 
     return 0;
 
@@ -286,6 +407,7 @@ int drow_comp (double x, double y, double size_x, double size_y)
     {
 
      //txLine (1285, 337, 1260, 536);
+     txSetColor (TX_WHITE, Tolshina);
      txLine ((1260 - 1400) * size_x + x, (536  - 600) * size_y + y, (1266 - 1400) * size_x + x, (560 - 600) * size_y + y);
      txLine ((1266 - 1400) * size_x + x, (560  - 600) * size_y + y, (1244 - 1400) * size_x + x, (562 - 600) * size_y + y);
      txLine ((1244 - 1400) * size_x + x, (562  - 600) * size_y + y, (1092 - 1400) * size_x + x, (656 - 600) * size_y + y);
@@ -320,7 +442,7 @@ int drow_comp (double x, double y, double size_x, double size_y)
      txLine ((1590 - 1400) * size_x + x, (590  - 600) * size_y + y, (1273 - 1400) * size_x + x, (529 - 600) * size_y + y);
      txLine ((1273 - 1400) * size_x + x, (529  - 600) * size_y + y, (1266 - 1400) * size_x + x, (337 - 600) * size_y + y);
 
-     txCircle ((1400 - 1400) * size_x + x, (600 - 600) * size_y + y, 10);
+     //txCircle ((1400 - 1400) * size_x + x, (600 - 600) * size_y + y, 10);
 
      return 0;
 
@@ -410,7 +532,7 @@ int drow_stive (double x, double y, double size_x, double size_y, double slide_s
     txSetColor (TX_LIGHTGREEN, Tolshina); txLine (-62 * size_x + x, 109 * size_y + y, -63 * size_x + x, -95 * size_y + y);
     txSetColor (TX_WHITE, Tolshina); txLine (-63 * size_x + x, -95 * size_y + y, 50 * size_x + x, -95 * size_y + y);
     txSetColor (TX_LIGHTRED, Tolshina); txLine (12 * size_x + x, 108 * size_y + y, 12 * size_x + x, -70 * size_y + y);
-    txCircle(400, 270, 10);
+    //txCircle(400, 270, 10);
 
     //txLine (412, 380, 388, 380 * size_y + y);
     //txLine (388, 380, 388, 193 * size_y + y);
@@ -486,7 +608,7 @@ int drow_leni (int y, const char text[], int color)
     txSetTextAlign();
     txSetColor (color);
     txSelectFont ("Comic Sans MS", 140);
-    txTextOut (800, y, text);
+    txTextOut (1000, y, text);
 
     return 0;
 
