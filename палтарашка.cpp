@@ -20,6 +20,7 @@ int sen_225();
 int sen_3();
 int sen_31();
 int sen_conec();
+int ctol();
 
 int main()
     {
@@ -239,7 +240,6 @@ int sen_3()
                    1, 1);
 
 
-
         txSleep (20);
         }
 
@@ -248,7 +248,7 @@ int sen_3()
 
 int sen_31()
     {
-    for (int t = 0; t < 100; t++)
+    for (int t = 0; t < 80; t++)
         {
         txSetFillColor (TX_BLACK);
         txClear();
@@ -257,7 +257,8 @@ int sen_31()
                    1, 1);
 
        drow_cat (949 + 7 * t, 800 - 5 * t,
-                  1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
+                  1, 1,
+                                                                      // 1 - (-1) = 1 + 1 = 2
                   57 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,
                   5 - (t / 6) % 2 * 10,                          // 2 / 250 = 2.0 / 250.0,
                   11, 11,
@@ -613,3 +614,16 @@ int drow_leni (int y, const char text[], int color)
     return 0;
 
     }
+
+/*int ctol();
+    {
+    txLine (98, 578, 65, 154);
+    txLine (65, 154, 641, 143);
+    txLine (641, 143, 644, 587);
+    txLine (586, 470, 582, 211);
+    txLine (582, 211, 121, 219);
+    txLine (121, 219, 136, 467);
+
+
+    return 0;
+    } */
