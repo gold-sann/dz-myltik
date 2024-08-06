@@ -11,6 +11,8 @@ int drow_lest_6 (double x, double y, double size_x, double size_y, double tolshi
 int drow_lestnica52 (double x, double y, double size_x, double size_y);
 int drow_stive (double x, double y, double size_x, double size_y, double slide_ster, double slide_sten);
 int drow_leni (int y, const char text[], int color);
+int drow_ctol (int x, int y);
+int russ_line (int x1, int y1, int x2, int y2, int color, int tol);
 int sen_1();
 int sen_2();
 int sen_22();
@@ -20,7 +22,6 @@ int sen_225();
 int sen_3();
 int sen_31();
 int sen_conec();
-int ctol();
 
 int main()
     {
@@ -35,15 +36,15 @@ int main()
     //drow_lest_6 (500, 500, 1.5, 1.5);
     //drow_stive(400, 270, 1, 1, 57, 50);
     //drow_lest_6 (400, 400, -0.5, 1.5);
-    sen_1();
-    sen_2();
+    //sen_1();
+    //sen_2();
     sen_22();
-    sen_223();
+    /*sen_223();
     sen_224();
     sen_225();
     sen_3();
     sen_31();
-    sen_conec();
+    sen_conec();*/
 
     return 0;
 
@@ -91,6 +92,10 @@ int sen_2()
         {
         txSetFillColor (TX_BLACK);
         txClear();
+
+        drow_lest_6 (100, 550,
+                     2, 2,
+                     5);
 
         drow_cat (1445, 202 + t * 4,
                   1, -1 + (2.0 / 250.0) * 2 * t,                                 // 1 - (-1) = 1 + 1 = 2
@@ -225,6 +230,8 @@ int sen_3()
         txSetFillColor (TX_BLACK);
         txClear();
 
+        drow_ctol (1200, 500);
+
        drow_cat (800 + 1 * t, 800,
                   1, 1,                                                      // 1 - (-1) = 1 + 1 = 2
                   57 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,
@@ -253,11 +260,13 @@ int sen_31()
         txSetFillColor (TX_BLACK);
         txClear();
 
-        drow_comp (1600, 500,
-                   1, 1);
+       drow_ctol (1200, 500);
+
+       drow_comp (1600, 500,
+                  1, 1);
 
        drow_cat (949 + 7 * t, 800 - 5 * t,
-                  1, 1,  
+                  1, 1,
                                                                       // 1 - (-1) = 1 + 1 = 2
                   57 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,
                   5 - (t / 6) % 2 * 10,                          // 2 / 250 = 2.0 / 250.0,
@@ -266,7 +275,7 @@ int sen_31()
 
        drow_leni (900,
                    "мяяяу *храп",
-                   RGB (t, t / 5, t / 7));
+                   RGB (79 / 2 * 15, t / 5 * 15, t / 7 * 15));
 
        /*drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
                     1, 1,                                                                   //1445 кордината кошки на руках по x
@@ -282,16 +291,16 @@ int sen_conec()
     {
     for (int t = 0; t < 80; t++)
         {
-        txSetFillColor (TX_BLACK);
+        txSetFillColor (RGB (0, 0, 0));
         txClear();
 
         drow_leni (500,
                    "вот и сказочке конец",
-                   RGB (t, t / 2, t / 3));
+                   RGB (79 / 2 * 15, t / 5 * 15, t / 7 * 15));
 
         drow_leni (700,
                    "а кто видел молодец!!!",
-                   RGB (t, t / 2, t / 3));
+                   RGB (79 / 2 * 15, t / 5 * 15, t / 7 * 15));
 
         txSleep (20);
         }
@@ -550,22 +559,30 @@ int drow_stive (double x, double y, double size_x, double size_y, double slide_s
     txSetColor (TX_PINK, Tolshina); txLine (49 * size_x + x, 95 * size_y + y, 11 * size_x + x, 111 * size_y + y);
     txSetColor (TX_GREY, Tolshina); txLine (11 * size_x + x, 111 * size_y + y, -63 * size_x + x, 109 * size_y + y);
 
-    double y0 = 800;
-    double x0 = 800;
+    double x0 = -400;
+    double y0 = -300;
 
-    txLine (325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
-    //printf ("x1 = %lg, y1 = %lg, x2 = %lg, y2 = %lg\n",325 - x + x0, 34  - y + y0, 467 - x + x0, 18  - y + y0);
-
-    txLine (467 + x + x0, 18  + y + y0, 490 + x + x0, 168 + y + y0);
-    txLine (490 + x + x0, 168 + y + y0, 336 + x + x0, 189 + y + y0);
-    txLine (336 + x + x0, 189 + y + y0, 301 + x + x0, 195 + y + y0);
-    txLine (301 + x + x0, 195 + y + y0, 283 + x + x0, 52  + y + y0);
-    txLine (283 + x + x0, 52  + y + y0, 326 + x + x0, 33  + y + y0);
-
+    russ_line (325 + x + x0, 34  + y + y0, 467 + x + x0, 18  + y + y0, TX_PINK,      Tolshina);
+    russ_line (467 + x + x0, 18  + y + y0, 490 + x + x0, 168 + y + y0, TX_BROWN,     Tolshina);
+    russ_line (490 + x + x0, 168 + y + y0, 336 + x + x0, 189 + y + y0, TX_GREEN,     Tolshina);
+    russ_line (336 + x + x0, 189 + y + y0, 301 + x + x0, 195 + y + y0, TX_LIGHTBLUE, Tolshina);
+    russ_line (301 + x + x0, 195 + y + y0, 283 + x + x0, 52  + y + y0, TX_RED,       Tolshina);
+    russ_line (283 + x + x0, 52  + y + y0, 326 + x + x0, 33  + y + y0, TX_ORANGE,    Tolshina);
 
     return 0;
 
     }
+
+int russ_line (int x1, int y1, int x2, int y2, int color, int tol)
+    {
+    txSetColor (color, tol);
+
+    txLine                                        (x1, y1, x2, y2);
+  //printf ("x1 = %d, y1 = %d, x2 = %d, y2 = %d\n",x1, y1, x2, y2);
+
+    return 0;
+    }
+
 
 int drow_syb()
     {
@@ -615,14 +632,17 @@ int drow_leni (int y, const char text[], int color)
 
     }
 
-int ctol();
+int drow_ctol(int x, int y)
     {
-    txLine (98, 578, 65, 154);
-    txLine (65, 154, 641, 143);
-    txLine (641, 143, 644, 587);
-    txLine (586, 470, 582, 211);
-    txLine (582, 211, 121, 219);
-    txLine (121, 219, 136, 467);
+    txSetColor (TX_RED, Tolshina);
+    txLine (98  + x, 578 + y, 65  + x, 154 + y);
+    txLine (65  + x, 154 + y, 641 + x, 143 + y);
+    txLine (641 + x, 143 + y, 644 + x, 587 + y);
+    txLine (586 + x, 470 + y, 582 + x, 211 + y);
+    txLine (582 + x, 211 + y, 121 + x, 219 + y);
+    txLine (121 + x, 219 + y, 136 + x, 467 + y);
+    txSetColor (TX_WHITE, Tolshina);
+    txCircle (1530, 675, 20);
 
 
     return 0;
