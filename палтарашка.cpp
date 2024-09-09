@@ -29,14 +29,14 @@ int main()
     txCreateWindow (2000, 1000);
 
     txSetColor (RGB (0, 0, 0));
-    drow_cat (700, 400, 1, 1, 57, 50, 5, 11, 11, 67, 57, 57);
+    //drow_cat (700, 400, 1, 1, 57, 50, 5, 11, 11, 67, 57, 57);
     //txSetColor (TX_PINK, 3);
     //drow_cat (300, 280, 1, 1, 57, 50, 5, 1, 1, 67);
     //drow_miscaar();
     //drow_lest_6 (500, 500, 1.5, 1.5);
     //drow_stive(400, 270, 1, 1, 57, 50);
     //drow_lest_6 (400, 400, -0.5, 1.5);
-    //1sen_1();
+    sen_1();
     //sen_2();
     //sen_22();
     /*sen_223();
@@ -71,7 +71,8 @@ int sen_1()
                   5 - (t / 6) % 2 * 10,                                    //   t           =  0 1 2 3 4 5 6 7 8 9 10
                   11, 11,                                                   //   t % 2       =  0 1 0 1 0 1 0 1 0 1 0
                   67 -  (t / 3) % 2 * 30,
-                  57 - t % 2 * 30, 57);
+                  //57 - t % 2 * 30, 57
+                  TX_GREY, TX_GREEN);
 
          txSetColor (RGB (150, 150, 150));
 
@@ -329,16 +330,23 @@ int sen_conec()
 
 
 
-int drow_cat (double x, double y, double size_x, double size_y, double slide_leg, double slide_y,  double slide_yxa, double slide_nos_y, double slide_nos_x, double slide_leg_ggo, int color_a, int color_b)
+int drow_cat (double x, double y, double size_x, double size_y,
+              double slide_leg, double slide_y,
+              double slide_yxa,
+              double slide_nos_y,double slide_nos_x,
+              double slide_leg_ggo,
+              int color_cat, int color_tail)
     {
 
     //printf ("x = %lg, y = %lg\n", x, y);
 
-    txSetColor (TX_YELLOW, Tolshina); txLine ((16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y, (4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y);
-    txSetColor (TX_ORANGE, Tolshina); txLine ((4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y);
-    txSetColor (TX_WHITE,  Tolshina); txLine ((32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y, (68  - 300) * size_x + x, (306 - 280) * size_y + y);
-    txSetColor (TX_ORANGE, Tolshina);
+    txSetColor (color_cat, Tolshina);
+    txLine ((16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y, (4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y);
+    txLine ((4   - 300 - slide_leg) * size_x + x, (405 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y);
+    txLine ((32  - 300 - slide_leg) * size_x + x, (332 - 280 - slide_y) * size_y + y, (68  - 300) * size_x + x, (306 - 280) * size_y + y);
     txLine ((68  - 300) * size_x + x, (306 - 280) * size_y + y, (111 - 300) * size_x + x, (225 - 280) * size_y + y);
+
+    txSetColor (color_tail, Tolshina);
     txLine ((111 - 300) * size_x + x, (225 - 280) * size_y + y, (58  - 300) * size_x + x, (160 - 280) * size_y + y);
     txLine ((58  - 300) * size_x + x, (160 - 280) * size_y + y, (41  - 300) * size_x + x, (89  - 280) * size_y + y);
     txLine ((41  - 300) * size_x + x, (89  - 280) * size_y + y, (18  - 300) * size_x + x, (53  - 280) * size_y + y);
@@ -346,6 +354,8 @@ int drow_cat (double x, double y, double size_x, double size_y, double slide_leg
     txLine ((48  - 300) * size_x + x, (59  - 280) * size_y + y, (72  - 300) * size_x + x, (90  - 280) * size_y + y);
     txLine ((72  - 300) * size_x + x, (90  - 280) * size_y + y, (92  - 300) * size_x + x, (149 - 280) * size_y + y);
     txLine ((92  - 300) * size_x + x, (149 - 280) * size_y + y, (156 - 300) * size_x + x, (205 - 280) * size_y + y);
+
+    txSetColor (color_cat, Tolshina);
     txLine ((156 - 300) * size_x + x, (205 - 280) * size_y + y, (202 - 300) * size_x + x, (191 - 280) * size_y + y);
     txLine ((202 - 300) * size_x + x, (191 - 280) * size_y + y, (353 - 300) * size_x + x, (215 - 280) * size_y + y);
     txLine ((353 - 300) * size_x + x, (215 - 280) * size_y + y, (396 - 300) * size_x + x, (216 - 280) * size_y + y);
@@ -379,20 +389,19 @@ int drow_cat (double x, double y, double size_x, double size_y, double slide_leg
     txLine ((358 - 300 + slide_leg) * size_x + x, (429 - 280 + slide_y) * size_y + y, (343 - 300 + slide_leg) * size_x + x, (420 - 280 + slide_y) * size_y + y);
     txLine ((343 - 300 + slide_leg) * size_x + x, (420 - 280 + slide_y) * size_y + y, (375 - 300)             * size_x + x, (348 - 280)           * size_y + y);
 
-    txSetColor (TX_LIGHTRED,   Tolshina); txLine ((200 - 300)                 * size_x + x, (349 - 280) * size_y + y, (170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y);      // задняя нога
-    txSetColor (TX_WHITE,      Tolshina); txLine ((170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y, (189 - 300 - slide_leg_ggo) * size_x + x, (421 - 280) * size_y + y);
-    txSetColor (TX_LIGHTGREEN, Tolshina); txLine ((189 - 300 - slide_leg_ggo) * size_x + x, (421 - 280) * size_y + y, (210 - 300 - slide_leg_ggo) * size_x + x, (428 - 280) * size_y + y);
-    txSetColor (TX_LIGHTBLUE,  Tolshina); txLine ((210 - 300 - slide_leg_ggo) * size_x + x, (428 - 280) * size_y + y, (215 - 300 - slide_leg_ggo) * size_x + x, (444 - 280) * size_y + y);
-    txSetColor (TX_YELLOW,     Tolshina); txLine ((215 - 300 - slide_leg_ggo) * size_x + x, (444 - 280) * size_y + y, (176 - 300 - slide_leg_ggo) * size_x + x, (445 - 280) * size_y + y);
-    txSetColor (TX_ORANGE,     Tolshina); txLine ((176 - 300 - slide_leg_ggo) * size_x + x, (445 - 280) * size_y + y, (125 - 300 - slide_leg_ggo) * size_x + x, (396 - 280) * size_y + y);
-    txSetColor (TX_BROWN,      Tolshina); txLine ((125 - 300 - slide_leg_ggo) * size_x + x, (396 - 280) * size_y + y, (136 - 300)                 * size_x + x, (350 - 280) * size_y + y);
+    txLine ((200 - 300)                 * size_x + x, (349 - 280) * size_y + y, (170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y);      // задняя нога
+    txLine ((170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y, (189 - 300 - slide_leg_ggo) * size_x + x, (421 - 280) * size_y + y);
+    txLine ((189 - 300 - slide_leg_ggo) * size_x + x, (421 - 280) * size_y + y, (210 - 300 - slide_leg_ggo) * size_x + x, (428 - 280) * size_y + y);
+    txLine ((210 - 300 - slide_leg_ggo) * size_x + x, (428 - 280) * size_y + y, (215 - 300 - slide_leg_ggo) * size_x + x, (444 - 280) * size_y + y);
+    txLine ((215 - 300 - slide_leg_ggo) * size_x + x, (444 - 280) * size_y + y, (176 - 300 - slide_leg_ggo) * size_x + x, (445 - 280) * size_y + y);
+    txLine ((176 - 300 - slide_leg_ggo) * size_x + x, (445 - 280) * size_y + y, (125 - 300 - slide_leg_ggo) * size_x + x, (396 - 280) * size_y + y);
+    txLine ((125 - 300 - slide_leg_ggo) * size_x + x, (396 - 280) * size_y + y, (136 - 300)                 * size_x + x, (350 - 280) * size_y + y);
 
     // задняя нога 2
-    txSetColor (TX_LIGHTRED,   Tolshina); txLine ((134 - 300)             * size_x + x, (345 - 280)           * size_y + y, (56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y);
-    txSetColor (TX_WHITE,      Tolshina); txLine ((56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y, (30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y);
-    txSetColor (TX_LIGHTGREEN, Tolshina); txLine ((30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y);            //txSetColor (TX_, 3);
-    txSetColor (TX_LIGHTBLUE,  Tolshina); txLine ((32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y, (16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y);
-    txSetColor (TX_LIGHTBLUE, Tolshina);
+    txLine ((134 - 300)             * size_x + x, (345 - 280)           * size_y + y, (56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y);
+    txLine ((56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y, (30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y);
+    txLine ((30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y);            //txSetColor (TX_, 3);
+    txLine ((32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y, (16  - 300 - slide_leg) * size_x + x, (437 - 280 - slide_y) * size_y + y);
 
     //txCircle ((300 - 300) + x, 280 - 280 + y, 10);
 
