@@ -61,6 +61,20 @@ int physics()
             }
         txSleep (50);
 
+         if (GetAsyncKeyState (VK_DOWN))
+            {
+            Vx++;
+            Vx++;
+            Vx++;
+            Vx++;
+            Vx++;
+            Vx++;
+            Vx++;
+            }
+        txSleep (50);
+
+
+
         }
 
     return 0;
