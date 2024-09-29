@@ -1,11 +1,13 @@
 #include <TXLib.h>
 
 int physics();
+int drow_Circly();
 
 int main()
     {
     txCreateWindow (800, 500);
     physics();
+    drow_Circly();
 
     return 0;
     }
@@ -18,10 +20,6 @@ int physics()
     while (!GetAsyncKeyState (VK_RETURN))
         {
         //printf ("x = %d, y = %d, Vx = %d, Vy = %d\n", x, y, Vx, Vy);
-
-        txSetColor (TX_LIGHTCYAN);
-        txSetFillColor (RGB (x / 2, y / 4, x / 3));
-        txCircle (x, y, 20);
 
         x = x + Vx * 1;
         y = y + Vy * 1;
@@ -77,5 +75,14 @@ int physics()
 
         }
 
+    return 0;
+    }
+
+drow_Circly()
+    {
+    txSetColor (TX_LIGHTCYAN);
+    txSetFillColor (RGB (x / 2, y / 4, x / 3));
+    txCircle (x, y, 20);
+    txCircle (x+20, y+20, 15);
     return 0;
     }
