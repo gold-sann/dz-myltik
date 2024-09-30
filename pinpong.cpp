@@ -1,24 +1,26 @@
 #include <TXLib.h>
 
-int physics();
-int drow_Circly();
+double physics();
+double drow_Circly (double x, double y);
 
 int main()
     {
     txCreateWindow (800, 500);
+    //drow_Circly (400, 250);
     physics();
-    drow_Circly();
 
     return 0;
     }
 
-int physics()
+double physics()
     {
-    int x = 100, y = 50;
-    int Vx = 7, Vy = 5;
+    double x = 100, y = 50;
+    double Vx = 7, Vy = 5;
 
     while (!GetAsyncKeyState (VK_RETURN))
         {
+        drow_Circly (x, y);
+
         //printf ("x = %d, y = %d, Vx = %d, Vy = %d\n", x, y, Vx, Vy);
 
         x = x + Vx * 1;
@@ -48,6 +50,24 @@ int physics()
             y = 0;
             }
 
+        if (GetAsyncKeyState (VK_UP))
+            {
+            Vy++;
+            }
+
+        if (GetAsyncKeyState (VK_CONTROL))
+            {
+            //Vy * 0.5;
+            //Vx * 0.5;
+            Vx = Vx * 0.9;
+            Vy = Vy * 0.9;
+            }
+
+        if (GetAsyncKeyState (VK_DOWN))
+            {
+            Vy--;
+            }
+
         if (GetAsyncKeyState (VK_RIGHT))
             {
             Vx++;
@@ -59,30 +79,29 @@ int physics()
             }
         txSleep (50);
 
-         if (GetAsyncKeyState (VK_DOWN))
+        if (GetAsyncKeyState (VK_MENU))
             {
-            Vx++;
-            Vx++;
-            Vx++;
-            Vx++;
-            Vx++;
-            Vx++;
-            Vx++;
+            Vx += 10;
+            }
+
+        if (GetAsyncKeyState (VK_BACK))
+            {
+            Vx = 0;
+            Vy = 0;
             }
         txSleep (50);
-
-
 
         }
 
     return 0;
     }
 
-drow_Circly()
+double drow_Circly (double x, double y)
     {
     txSetColor (TX_LIGHTCYAN);
     txSetFillColor (RGB (x / 2, y / 4, x / 3));
     txCircle (x, y, 20);
     txCircle (x+20, y+20, 15);
+
     return 0;
     }
