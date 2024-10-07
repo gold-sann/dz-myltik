@@ -2,7 +2,7 @@
 
 double physics();
 double drow_Circly (double x, double y);
-double control (double Vx,double Vy);
+double control (double* Vx,double* Vy);
 
 int main()
     {
@@ -51,7 +51,7 @@ double physics()
             y = 0;
             }
 
-        control (Vx, Vy);
+        control (&Vx, &Vy);
 
         txSleep (50);
 
@@ -71,46 +71,46 @@ double drow_Circly (double x, double y)
     return 0;
     }
 
-double control (double Vx, double Vy)
+double control (double* Vx, double* Vy)
     {
     if (GetAsyncKeyState (VK_UP))
         {
-        Vy++;
+        (*Vy)++;
         }
 
     if (GetAsyncKeyState (VK_CONTROL))
         {
         //Vy * 0.5;
         //Vx * 0.5;
-        Vx = Vx * 0.9;
-        Vy = Vy * 0.9;
+        *Vx = *Vx * 0.9;
+        *Vy = *Vy * 0.9;
         }
 
     if (GetAsyncKeyState (VK_DOWN))
         {
-        Vy--;
+        (*Vy)--;
         }
 
     if (GetAsyncKeyState (VK_RIGHT))
         {
-        Vx++;
+        (*Vx)++;
         }
 
     if (GetAsyncKeyState (VK_LEFT))
         {
-        Vx--;
+        (*Vx)--;
         }
 
     if (GetAsyncKeyState (VK_MENU))
         {
-        Vx += 10;
+        *Vx += 10;
         }
 
     if (GetAsyncKeyState (VK_BACK))
         {
-        Vx = 0;
-        Vy = 0;
+        *Vx = 0;
+        *Vy = 0;
         }
 
-    return 0;
+    return 0;                                      //"*"-СѓРєР°Р·Р°С‚РµР»СЊ(Р°РґСЂРµСЃ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№)
     }
