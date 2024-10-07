@@ -18,6 +18,8 @@ void Help (void*);
 
 int main()
     {
+    printf ("ESCAPE, RETURN\n");
+
     _beginthread (Help, 0, NULL);
 
     POINT v = { 100, 100 };
@@ -42,8 +44,7 @@ int main()
         if (p.x < 10 || p.x > sz.x-10) { v.x = -v.x; mouse_event (MOUSEEVENTF_MOVE, v.x, 0,   0, 0); }
         if (p.y < 10 || p.y > sz.y-10) { v.y = -v.y; mouse_event (MOUSEEVENTF_MOVE, 0,   v.y, 0, 0); }
 
-        Sleep
-        (10);
+        Sleep (10);
         }
 
     return 0;

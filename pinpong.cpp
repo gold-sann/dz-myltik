@@ -2,6 +2,7 @@
 
 double physics();
 double drow_Circly (double x, double y);
+double control (double Vx,double Vy);
 
 int main()
     {
@@ -50,48 +51,12 @@ double physics()
             y = 0;
             }
 
-        if (GetAsyncKeyState (VK_UP))
-            {
-            Vy++;
-            }
+        control (Vx, Vy);
 
-        if (GetAsyncKeyState (VK_CONTROL))
-            {
-            //Vy * 0.5;
-            //Vx * 0.5;
-            Vx = Vx * 0.9;
-            Vy = Vy * 0.9;
-            }
-
-        if (GetAsyncKeyState (VK_DOWN))
-            {
-            Vy--;
-            }
-
-        if (GetAsyncKeyState (VK_RIGHT))
-            {
-            Vx++;
-            }
-
-        if (GetAsyncKeyState (VK_LEFT))
-            {
-            Vx--;
-            }
-        txSleep (50);
-
-        if (GetAsyncKeyState (VK_MENU))
-            {
-            Vx += 10;
-            }
-
-        if (GetAsyncKeyState (VK_BACK))
-            {
-            Vx = 0;
-            Vy = 0;
-            }
         txSleep (50);
 
         }
+
 
     return 0;
     }
@@ -102,6 +67,50 @@ double drow_Circly (double x, double y)
     txSetFillColor (RGB (x / 2, y / 4, x / 3));
     txCircle (x, y, 20);
     txCircle (x+20, y+20, 15);
+
+    return 0;
+    }
+
+double control (double Vx, double Vy)
+    {
+    if (GetAsyncKeyState (VK_UP))
+        {
+        Vy++;
+        }
+
+    if (GetAsyncKeyState (VK_CONTROL))
+        {
+        //Vy * 0.5;
+        //Vx * 0.5;
+        Vx = Vx * 0.9;
+        Vy = Vy * 0.9;
+        }
+
+    if (GetAsyncKeyState (VK_DOWN))
+        {
+        Vy--;
+        }
+
+    if (GetAsyncKeyState (VK_RIGHT))
+        {
+        Vx++;
+        }
+
+    if (GetAsyncKeyState (VK_LEFT))
+        {
+        Vx--;
+        }
+
+    if (GetAsyncKeyState (VK_MENU))
+        {
+        Vx += 10;
+        }
+
+    if (GetAsyncKeyState (VK_BACK))
+        {
+        Vx = 0;
+        Vy = 0;
+        }
 
     return 0;
     }
