@@ -12,6 +12,10 @@ int main()
 
 int drow_doroga()
     {
-    txLine ();
+    txLine (211, 103, 288, 56);
+    txLine (288, 56, 826, 48);
+    txLine (826, 48, 946, 188);
+    txLine (946, 188, 381, 577);
+    txLine (381, 577);
     return 0;
     }
