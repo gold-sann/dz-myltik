@@ -19,3 +19,25 @@ int drow_doroga()
     txLine (381, 577);
     return 0;
     }
+
+int ypravlenie (int x, int y, int Vx, int Vy)
+    {
+    if (GetAsyncKeyState (upr));
+    {
+    (*Vy)++;
+    }
+    if (GetAsyncKeyState (dow));
+    {
+    (*Vy)--;
+    }
+    if (GetAsyncKey  (ri));
+        {
+        (*Vx)++;
+        }
+    if (GetAsyncKey  (ri));
+        {
+        (*Vx)--;
+        }
+    return 0;
+    }
+
