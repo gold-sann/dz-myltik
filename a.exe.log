@@ -1,0 +1,134 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe, файл: c:\users\desktop\downloads\codeblocks\mingw\include\txlib.h, строка: 13385, функция: bool {anonymous}::TX::txEllipse(double, double, double, double, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+Если вы указали параметр "dc", то он неверен.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x004F42FC (32-bit), Flags: CMdrE0, Thread: 0x5894 (Main), GetLastError(): 6 (Неверный дескриптор). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 28 2024 22:36:29, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Oct 28 2024 22:36:32
+
+Run file:	C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe, файл: c:\users\desktop\downloads\codeblocks\mingw\include\txlib.h, строка: 13385, функция: bool {anonymous}::TX::txEllipse(double, double, double, double, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+Если вы указали параметр "dc", то он неверен.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x004F42FC (32-bit), Flags: CMdrE0, Thread: 0x49F4 (Main), GetLastError(): 6 (Неверный дескриптор). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 28 2024 22:41:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Oct 28 2024 22:41:39
+
+Run file:	C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x00413766 в модуле C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x004F42FC (32-bit), Flags: CMdRe0, Thread: 0x4D6C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov 11 2024 21:42:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Nov 11 2024 21:42:58
+
+Run file:	C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: signal (8, 0x00): SIGFPE: Грубая ошибка в вычислениях. 
+
+Недопустимая операция с плавающей точкой.
+
+#1: Исключение EXCEPTION_FLT_INVALID_OPERATION (0xC0000090) при выполнении кода по адресу 0x00413766 в модуле C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x004F42FC (32-bit), Flags: CMdRe0, Thread: 0x4D6C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov 11 2024 21:42:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Nov 11 2024 21:42:58
+
+Run file:	C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\Documents\GitHub\dz-myltik
+
+--------------------------------------------------

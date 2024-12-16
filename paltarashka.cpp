@@ -40,14 +40,14 @@ int main()
     //drow_stive(400, 270, 1, 1, 57, 50);
     //drow_lest_6 (400, 400, -0.5, 1.5);
     sen_1();
-    //sen_2();
-    //sen_22();
-    /*sen_223();
+    sen_2();
+    sen_22();
+    sen_223();
     sen_224();
     sen_225();
     sen_3();
     sen_31();
-    sen_conec();*/
+    sen_conec();
 
     return 0;
 
@@ -55,7 +55,7 @@ int main()
 
 int sen_1()
     {
-    drow_leni (700, "как то раз на физтехе", RGB (243, 210, 24));
+    drow_leni (700, "пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", RGB (243, 210, 24));
     txSleep (2000);
                                                                                   //                 ^^
     for (int t = 0; t < 250; t++)                                     //t     = 0   1  2 3 4 5 6 7 8 9 10                                                                                                                                                                                                                       // i love my Mam  \/
@@ -65,16 +65,16 @@ int sen_1()
 
         drow_lest_6 (700, 550,
                      2, 2,
-                     5);                                                    // 7 / 2 = ч3 (о1), ч3 * 2 + о1 = 7
-                                                                      // 1 / 2 = ч0 (о0), ч0 * 2 + о0 = 0
-        drow_cat (200 + 5 * t, 700 - 2 * t,                           // 1 / 2 = ч1 (о0), ч1 * 2 + о0 = 2
-                  -1, 1,                                               // 1 / 2 = ч0 (о1), ч0 * 2 + о1 = 1
+                     5);                                                    // 7 / 2 = пїЅ3 (пїЅ1), пїЅ3 * 2 + пїЅ1 = 7
+                                                                      // 1 / 2 = пїЅ0 (пїЅ0), пїЅ0 * 2 + пїЅ0 = 0
+        drow_cat (200 + 5 * t, 700 - 2 * t,                           // 1 / 2 = пїЅ1 (пїЅ0), пїЅ1 * 2 + пїЅ0 = 2
+                  -1, 1,                                               // 1 / 2 = пїЅ0 (пїЅ1), пїЅ0 * 2 + пїЅ1 = 1
                   30 - (t / 3) % 2 * 30, 50 - (t / 4) % 2 * 15,                                      //
                   5 - (t / 6) % 2 * 10,                                    //   t           =  0 1 2 3 4 5 6 7 8 9 10
                   11, 11,                                                   //   t % 2       =  0 1 0 1 0 1 0 1 0 1 0
                   67 -  (t / 3) % 2 * 30,
                   //57 - t % 2 * 30, 57
-                  TX_GREY, TX_GREEN);
+                  TX_GREY, TX_GREY);
 
          txSetColor (RGB (150, 150, 150));
 
@@ -120,7 +120,7 @@ int sen_2()
                   57, 57);
 
         drow_leni (900,
-                   "мяяяяяяяяяяяяяяу",
+                   "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
                    RGB (t, t / 2, t / 5));
 
 
@@ -173,8 +173,8 @@ int sen_223()
                   67 - (t / 2) % 2 * 15,
                   57, 57);
 
-       drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
-                    1, 1,                                                                   //1445 кордината кошки на руках по x
+       drow_stive (1271, 600,                                                               //451 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ y
+                    1, 1,                                                                   //1445 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ x
                     57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
 
 
@@ -200,8 +200,8 @@ int sen_224()
                   67 - (t / 2) % 2 * 15,
                   57, 57);
 
-        drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
-                    1, 1,                                                                   //1445 кордината кошки на руках по x
+        drow_stive (1271, 600,                                                               //451 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ y
+                    1, 1,                                                                   //1445 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ x
                     57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
 
 
@@ -227,8 +227,8 @@ int sen_225()
                   67 - (t / 2) % 2 * 15,
                   57, 57);
 
-        drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
-                    1, 1,                                                                   //1445 кордината кошки на руках по x
+        drow_stive (1271, 600,                                                               //451 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ y
+                    1, 1,                                                                   //1445 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ x
                     57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);
 
 
@@ -259,8 +259,8 @@ int sen_3()
                   67,
                   57, 57);
 
-       /*drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
-                    1, 1,                                                                   //1445 кордината кошки на руках по x
+       /*drow_stive (1271, 600,                                                               //451 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ y
+                    1, 1,                                                                   //1445 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ x
                     57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);*/
 
         drow_comp (1600, 500,
@@ -295,11 +295,11 @@ int sen_31()
                   57, 57);
 
        drow_leni (900,
-                   "мяяяу *храп",
+                   "пїЅпїЅпїЅпїЅпїЅ *пїЅпїЅпїЅпїЅ",
                    RGB (79 / 2 * 15, t / 5 * 15, t / 7 * 15));
 
-       /*drow_stive (1271, 600,                                                               //451 кордината кошки на руках по y
-                    1, 1,                                                                   //1445 кордината кошки на руках по x
+       /*drow_stive (1271, 600,                                                               //451 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ y
+                    1, 1,                                                                   //1445 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ x
                     57 - (t / 8) % 2 * 30, 50 - (t / 8) % 2 * 30);*/
 
         txSleep (20);
@@ -316,11 +316,11 @@ int sen_conec()
         txClear();
 
         drow_leni (500,
-                   "вот и сказочке конец",
+                   "пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ",
                    RGB (79 / 2 * 15, t / 5 * 15, t / 7 * 15));
 
         drow_leni (700,
-                   "а кто видел молодец!!!",
+                   "пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!",
                    RGB (79 / 2 * 15, t / 5 * 15, t / 7 * 15));
 
         txSleep (20);
@@ -364,23 +364,23 @@ int drow_cat (double x, double y, double size_x, double size_y,
     txLine ((396 - 300) * size_x + x, (216 - 280) * size_y + y, (405 - 300) * size_x + x, (224 - 280) * size_y + y);
     txLine ((405 - 300) * size_x + x, (224 - 280) * size_y + y, (464 - 300) * size_x + x, (217 - 280) * size_y + y);
 
-    txLine ((464 - 300 - slide_yxa * 0.2) * size_x + x, (217 - 280) * size_y + y, (533 - 300 - slide_yxa * 1) * size_x + x, (189 - 280) * size_y + y); //ухо
+    txLine ((464 - 300 - slide_yxa * 0.2) * size_x + x, (217 - 280) * size_y + y, (533 - 300 - slide_yxa * 1) * size_x + x, (189 - 280) * size_y + y); //пїЅпїЅпїЅ
     txLine ((533 - 300) * size_x + x, (189 - 280) * size_y + y, (514 - 300 - slide_yxa * 0.5) * size_x + x, (217 - 280) * size_y + y);
 
-    txLine ((514 - 300) * size_x + x, (217 - 280) * size_y + y, (538 - 300) * size_x + x, (237 - 280) * size_y + y); // что-то между носом и ухом
+    txLine ((514 - 300) * size_x + x, (217 - 280) * size_y + y, (538 - 300) * size_x + x, (237 - 280) * size_y + y); // пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 
-    txLine ((538 - 300) * size_x + x, (237 - 280) * size_y + y, (549 - 300 + slide_nos_x) * size_x + x, (283 - 280 - slide_nos_y) * size_y + y); // нос
+    txLine ((538 - 300) * size_x + x, (237 - 280) * size_y + y, (549 - 300 + slide_nos_x) * size_x + x, (283 - 280 - slide_nos_y) * size_y + y); // пїЅпїЅпїЅ
     txLine ((549 - 300 + slide_nos_x) * size_x + x, (283 - 280 - slide_nos_y) * size_y + y, (523 - 300) * size_x + x, (300 - 280) * size_y + y);
 
     txLine ((523 - 300) * size_x + x, (300 - 280) * size_y + y, (487 - 300) * size_x + x, (292 - 280) * size_y + y);
     txLine ((487 - 300) * size_x + x, (292 - 280) * size_y + y, (467 - 300) * size_x + x, (302 - 280) * size_y + y);
     txLine ((467 - 300) * size_x + x, (302 - 280) * size_y + y, (480 - 300) * size_x + x, (318 - 280) * size_y + y);
 
-    txLine ((480 - 300)                    * size_x + x, (318 - 280)           * size_y + y, (487 - 300 - slide_leg * 0.3) * size_x + x, (350 - 280 - slide_y * 0.9) * size_y + y); // переняя нога
+    txLine ((480 - 300)                    * size_x + x, (318 - 280)           * size_y + y, (487 - 300 - slide_leg * 0.3) * size_x + x, (350 - 280 - slide_y * 0.9) * size_y + y); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     txLine ((488 - 300 - slide_leg  * 0.3) * size_x + x, (352 - 280 - slide_y) * size_y + y, (554 - 300 - slide_leg)       * size_x + x, (420 - 280 - slide_y * 1)   * size_y + y);
     txLine ((554 - 300 - slide_leg)        * size_x + x, (420 - 280 - slide_y) * size_y + y, (574 - 300 - slide_leg)       * size_x + x, (429 - 280 - slide_y * 1)   * size_y + y);
     txLine ((574 - 300 - slide_leg)        * size_x + x, (429 - 280 - slide_y) * size_y + y, (577 - 300 - slide_leg)       * size_x + x, (444 - 280 - slide_y * 1)   * size_y + y); txCircle ((577 - 300) * size_x + x, (444 - 280) * size_y + y, 30);
-    txLine ((577 - 300 - slide_leg)        * size_x + x, (444 - 280 - slide_y) * size_y + y, (541 - 300 - slide_leg)       * size_x + x, (445 - 280 - slide_y * 1)   * size_y + y); //   точка пятки txCircle ((541 - 300) * size_x + x, (445 - 280) * size_y + y, 5);
+    txLine ((577 - 300 - slide_leg)        * size_x + x, (444 - 280 - slide_y) * size_y + y, (541 - 300 - slide_leg)       * size_x + x, (445 - 280 - slide_y * 1)   * size_y + y); //   пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ txCircle ((541 - 300) * size_x + x, (445 - 280) * size_y + y, 5);
     txLine ((541 - 300 - slide_leg)        * size_x + x, (445 - 280 - slide_y) * size_y + y, (401 - 300)                   * size_x + x, (342 - 280 - slide_y * 0.1) * size_y + y);
 
     txLine ((401 - 300) * size_x + x, (342 - 280) * size_y + y, (200 - 300) * size_x + x, (349 - 280) * size_y + y);
@@ -391,7 +391,7 @@ int drow_cat (double x, double y, double size_x, double size_y,
     txLine ((358 - 300 + slide_leg) * size_x + x, (429 - 280 + slide_y) * size_y + y, (343 - 300 + slide_leg) * size_x + x, (420 - 280 + slide_y) * size_y + y);
     txLine ((343 - 300 + slide_leg) * size_x + x, (420 - 280 + slide_y) * size_y + y, (375 - 300)             * size_x + x, (348 - 280)           * size_y + y);
 
-    txLine ((200 - 300)                 * size_x + x, (349 - 280) * size_y + y, (170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y);      // задняя нога
+    txLine ((200 - 300)                 * size_x + x, (349 - 280) * size_y + y, (170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y);      // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     txLine ((170 - 300 - slide_leg_ggo) * size_x + x, (393 - 280) * size_y + y, (189 - 300 - slide_leg_ggo) * size_x + x, (421 - 280) * size_y + y);
     txLine ((189 - 300 - slide_leg_ggo) * size_x + x, (421 - 280) * size_y + y, (210 - 300 - slide_leg_ggo) * size_x + x, (428 - 280) * size_y + y);
     txLine ((210 - 300 - slide_leg_ggo) * size_x + x, (428 - 280) * size_y + y, (215 - 300 - slide_leg_ggo) * size_x + x, (444 - 280) * size_y + y);
@@ -399,7 +399,7 @@ int drow_cat (double x, double y, double size_x, double size_y,
     txLine ((176 - 300 - slide_leg_ggo) * size_x + x, (445 - 280) * size_y + y, (125 - 300 - slide_leg_ggo) * size_x + x, (396 - 280) * size_y + y);
     txLine ((125 - 300 - slide_leg_ggo) * size_x + x, (396 - 280) * size_y + y, (136 - 300)                 * size_x + x, (350 - 280) * size_y + y);
 
-    // задняя нога 2
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 2
     txLine ((134 - 300)             * size_x + x, (345 - 280)           * size_y + y, (56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y);
     txLine ((56  - 300 - slide_leg) * size_x + x, (364 - 280 - slide_y) * size_y + y, (30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y);
     txLine ((30  - 300 - slide_leg) * size_x + x, (407 - 280 - slide_y) * size_y + y, (32  - 300 - slide_leg) * size_x + x, (428 - 280 - slide_y) * size_y + y);            //txSetColor (TX_, 3);
@@ -467,7 +467,7 @@ int drow_comp (double x, double y, double size_x, double size_y)
      txLine ((1520 - 1400) * size_x + x, (697  - 600) * size_y + y, (1571 - 1400) * size_x + x, (629 - 600) * size_y + y);
      txLine ((1571 - 1400) * size_x + x, (629  - 600) * size_y + y, (1262 - 1400) * size_x + x, (564 - 600) * size_y + y);
 
-     txLine ((1253 - 1400) * size_x + x, (657  - 600) * size_y + y, (1378 - 1400) * size_x + x, (691 - 600) * size_y + y); // тачпад
+     txLine ((1253 - 1400) * size_x + x, (657  - 600) * size_y + y, (1378 - 1400) * size_x + x, (691 - 600) * size_y + y); // пїЅпїЅпїЅпїЅпїЅпїЅ
      txLine ((1378 - 1400) * size_x + x, (691  - 600) * size_y + y, (1338 - 1400) * size_x + x, (731 - 600) * size_y + y);
      txLine ((1338 - 1400) * size_x + x, (731  - 600) * size_y + y, (1211 - 1400) * size_x + x, (691 - 600) * size_y + y);
      txLine ((1211 - 1400) * size_x + x, (691  - 600) * size_y + y, (1252 - 1400) * size_x + x, (658 - 600) * size_y + y);
@@ -558,7 +558,7 @@ int drow_lestnica52 (double x, double y, double size_x, double size_y)
 int drow_stive (double x, double y, double size_x, double size_y, double slide_ster, double slide_sten)
     {
     //printf ("x = %lg, y = %lg\n", x, y);
-    txSetColor (TX_YELLOW, Tolshina); txLine (-15 * size_x + x, -122 * size_y + y, 204 * size_x + x, -34 - slide_ster * size_y + y); //рука
+    txSetColor (TX_YELLOW, Tolshina); txLine (-15 * size_x + x, -122 * size_y + y, 204 * size_x + x, -34 - slide_ster * size_y + y); //пїЅпїЅпїЅпїЅ
     txSetColor (TX_ORANGE, Tolshina); txLine (204 * size_x + x, -34 - slide_ster * size_y + y, 188 * size_x + x, -34 - slide_ster * size_y + y);
     txSetColor (TX_BROWN,  Tolshina); txLine (192 * size_x + x, -30 - slide_ster * size_y + y, -36 * size_x + x, -120 * size_y + y);
     txSetColor (TX_LIGHTRED, Tolshina); txLine (-36 * size_x + x, -120 * size_y + y, -64 * size_x + x, -46 * size_y + y);
@@ -567,7 +567,7 @@ int drow_stive (double x, double y, double size_x, double size_y, double slide_s
     txSetColor (TX_LIGHTBLUE, Tolshina); txLine (177 * size_x + x, 42 - slide_ster * size_y + y, 205 * size_x + x, -32 - slide_ster * size_y + y);
     txSetColor (TX_PINK, Tolshina); txLine (190 * size_x + x, -29 - slide_ster * size_y + y, 163 * size_x + x, 49 - slide_ster * size_y + y);
 
-    txSetColor (TX_PINK, Tolshina); txLine (50 * size_x + x, -95 * size_y + y, 60 * size_x + x, 96 * size_y + y); //туловеще
+    txSetColor (TX_PINK, Tolshina); txLine (50 * size_x + x, -95 * size_y + y, 60 * size_x + x, 96 * size_y + y); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     txSetColor (TX_LIGHTBLUE, Tolshina); txLine (60 * size_x + x, 96 * size_y + y, -62 * size_x + x, 109 * size_y + y);
     txSetColor (TX_LIGHTGREEN, Tolshina); txLine (-62 * size_x + x, 109 * size_y + y, -63 * size_x + x, -95 * size_y + y);
     txSetColor (TX_WHITE, Tolshina); txLine (-63 * size_x + x, -95 * size_y + y, 50 * size_x + x, -95 * size_y + y);
@@ -579,7 +579,7 @@ int drow_stive (double x, double y, double size_x, double size_y, double slide_s
     //txLine (388, 193, 347, 191 * size_y + y);
     txLine (9 * size_x + x, 108 * size_y + y, -64 * size_x + x, 108 * size_y + y);
 
-    txSetColor (TX_YELLOW, Tolshina); txLine (-63 * size_x + x, 109 * size_y + y, -61 - slide_sten * size_x + x, 375 * size_y + y); //ноги
+    txSetColor (TX_YELLOW, Tolshina); txLine (-63 * size_x + x, 109 * size_y + y, -61 - slide_sten * size_x + x, 375 * size_y + y); //пїЅпїЅпїЅпїЅ
     txSetColor (TX_ORANGE, Tolshina); txLine (-61 - slide_sten * size_x + x, 375 * size_y + y, 18 * size_x + x, 377 * size_y + y);
     txSetColor (TX_BROWN,  Tolshina); txLine (11 * size_x + x, 107 * size_y + y, 11 * size_x + x, 113 * size_y + y);
     txSetColor (TX_LIGHTRED, Tolshina); txLine (11 * size_x + x, 113 * size_y + y, 30 * size_x + x, 113 * size_y + y);
@@ -619,7 +619,7 @@ int drow_syb()
     txSetTextAlign (TA_CENTER);
     txSetColor (TX_WHITE, Tolshina);
     txSelectFont ("Comic Sans MS", 140);
-    txTextOut (1000, 700, "-- ааааааааа");
+    txTextOut (1000, 700, "-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 
     txSetTextAlign();
 
@@ -631,7 +631,7 @@ int drow_sybr()
     {
     txSetFillColor (TX_BLACK);
     txSelectFont ("Comic Sans MS", 140);
-    txTextOut (1000, 700, "-- тихо, она спит");
+    txTextOut (1000, 700, "-- пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
 
     txSetTextAlign();
 
@@ -643,7 +643,7 @@ int drow_sybry()
     {
     txSetFillColor (TX_BLACK);
     txSelectFont ("Comic Sans MS", 140);
-    txTextOut (1000, 700, "-- макороны, макороны, макороны,");
+    txTextOut (1000, 700, "-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ,");
 
     txSetTextAlign();
 
