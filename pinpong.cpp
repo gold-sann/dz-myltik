@@ -54,11 +54,12 @@ double physics()
         control (&Vx2, &Vy2, 'W', 'S', 'D', 'A', 'Q', VK_CONTROL);
 
         double rassto = rasstoanie (x, y, x2, y2);
-        if (rassto < 200)
+        if (rassto < 100)
             {
             txMessageBox ("game over,win is traingle");
 
             score = score + 1;
+            txClearConsole();
             printf ( "побед треугольника %d", score);
 
             x = 100, y = 50;
@@ -77,6 +78,8 @@ double drow_Circly (double x, double y)
     txSetColor (TX_LIGHTCYAN);
     txSetFillColor (RGB (x / 2, y / 4, x / 3));
     txCircle (x, y, 20);
+    txSetFillColor (TX_NULL);
+    txCircle (x, y, 100);
 
     return 0;
     }
@@ -86,6 +89,8 @@ double drow_traingle (double x2, double y2, COLORREF sevet)
     txSetColor (sevet);
     txSetFillColor (sevet);
     txCircle (x2, y2, 10);
+    txSetFillColor (TX_NULL);
+    txCircle (x2, y2, 100);
     txLine (0 + x2, -90 + 125 + y2, 94 + x2,  -90 + 125 + y2);
     txLine (94 + x2, -90 + 125 + y2, 94 + x2, -150 +125 + y2);
     txLine (94 + x2, -150 + 125 + y2, -90 + x2, -150 + 125 + y2);
