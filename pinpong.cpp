@@ -1,17 +1,20 @@
 #include "TXLib.h"
 
 double otrazenie (double* x, double* y, double* Vx, double* Vy);
-double geroy(double x, double y);
+double geroy(double x, double y, COLORREF color_geroy);
 double controlirovanie (double* Vx, double* Vy, int up, int dow, int ri, int le);
-double cub ();
-double calculate_color (double x, double y, double x2, double y2, COLORREF smaldist, COLORREF bigdist);
+double cub (double centre_x, double centre_y, double x, double y);
+double calculate_dist (double x, double y, double x2, double y2, double *dist);
 
 int main()
     {
     txCreateWindow (800, 500);
 
     double x = 200; double y = 150;
+    COLORREF color_geroy = TX_BLUE;
     double Vx = 4, Vy = 3;
+    double centre_x = 800 / 2;
+    double centre_y = 500 / 2;
 
 
 
@@ -23,10 +26,10 @@ int main()
         Vy *= 0.99;
 
         otrazenie (&x, &y, &Vx, &Vy);
-        geroy (x, y);
+        geroy (x, y, color_geroy);
         controlirovanie (&Vx, &Vy, VK_UP, VK_DOWN, VK_RIGHT, VK_LEFT);
-        cub ();
-        calculate_color (x, y,  800 / 2, 500 / 2, TX_RED, TX_GREEN);
+        cub (centre_x - 200, centre_y, x, y);
+        cub (centre_x + 200, centre_y, x, y);
 
         txSleep(10);
         }
@@ -59,8 +62,9 @@ double otrazenie (double* x, double* y, double* Vx, double* Vy)
     return 0;
     }
 
-double geroy(double x, double y)
+double geroy(double x, double y, COLORREF color_geroy)
     {
+    txSetFillColor(color_geroy);
     txCircle(x, y, 10);
     return 0;
     }
@@ -96,18 +100,37 @@ double controlirovanie (double* Vx, double* Vy, int up, int dow, int ri, int le)
     return 0;
     }
 
-double cub ()
+double cub (double centre_x, double centre_y, double x, double y)
     {
-    txRectangle (800 / 2 - 10, 500 / 2 - 10, 800 / 2 + 10, 500 / 2 + 10);
-    txRectangle (800 / 3 - 10, 500 / 3 - 10, 800 / 3 + 10, 500 / 3 + 10);
+    double distance = 0;
+
+    calculate_dist (x, y,  centre_x, centre_y, &distance);
+
+    if (distance <= 100)
+        {
+        txSetFillColor (TX_RED);
+        }
+    else
+        {
+        txSetFillColor (TX_YELLOW);
+        }
+
+    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
     return 0;
     }
 
-double calculate_color (double x, double y, double x2, double y2, COLORREF smalldist, COLORREF bigdist)
+double calculate_dist (double x, double y, double x2, double y2, double *dist)
+    {
+    *dist = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
+
+    return 0;
+    }
+
+/*double calculate_color (double x, double y, double x2, double y2, COLORREF smalldist, COLORREF bigdist)
     {
     double distance = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
 
-    if (distance <= 200)
+    if (distance <= 100)
         {
         txSetFillColor (smalldist);
         }
@@ -116,4 +139,4 @@ double calculate_color (double x, double y, double x2, double y2, COLORREF small
         txSetFillColor (bigdist);
         }
     return 0;
-    }
+    }*/
