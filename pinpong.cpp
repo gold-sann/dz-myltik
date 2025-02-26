@@ -126,6 +126,72 @@ double calculate_dist (double x, double y, double x2, double y2, double *dist)
     return 0;
     }
 
+double calculate_dist2 (double x, double y, double x2, double y2)
+    {
+    double dist = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
+
+    return dist;
+    }
+
+double calculate_dist3 (double x, double y, double x2, double y2)
+    {
+    return sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
+    }
+
+
+
+double cub2 (double centre_x, double centre_y, double x, double y)
+    {
+    double distance = calculate_dist2 (x, y,  centre_x, centre_y);
+
+    if (distance <= 100)
+        {
+        txSetFillColor (TX_RED);
+        }
+    else
+        {
+        txSetFillColor (TX_YELLOW);
+        }
+
+    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
+    return 0;
+    }
+
+double cub3 (double centre_x, double centre_y, double x, double y)
+    {
+    if (calculate_dist2 (x, y,  centre_x, centre_y) <= 100)
+        {
+        txSetFillColor (TX_RED);
+        }
+    else
+        {
+        txSetFillColor (TX_YELLOW);
+        }
+
+    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
+    return 0;
+    }
+
+double cub4 (double centre_x, double centre_y, double x, double y)
+    {
+    txSetFillColor ((calculate_dist2 (x, y,  centre_x, centre_y) <= 100)? TX_RED : TX_YELLOW);
+
+    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
+    return 0;
+    }
+
+double cub5 (double centre_x, double centre_y, double x, double y)
+    {
+    double distance = calculate_dist2 (x, y,  centre_x, centre_y);
+
+    txSetFillColor ((distance <= 100) ? TX_RED : TX_YELLOW);
+
+    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
+    return 0;
+    }
+
+
+
 /*double calculate_color (double x, double y, double x2, double y2, COLORREF smalldist, COLORREF bigdist)
     {
     double distance = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
