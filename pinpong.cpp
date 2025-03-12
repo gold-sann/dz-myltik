@@ -1,10 +1,13 @@
 #include "TXLib.h"
 
+const double Number = 100;
+const double Speed = 0.5;
+
 double otrazenie (double* x, double* y, double* Vx, double* Vy);
 double geroy(double x, double y, COLORREF color_geroy);
 double controlirovanie (double* Vx, double* Vy, int up, int dow, int ri, int le);
 double cub (double centre_x, double centre_y, double x, double y);
-double calculate_dist (double x, double y, double x2, double y2, double *dist);
+double calculate_dist (double x, double y, double x2, double y2);
 
 int main()
     {
@@ -12,7 +15,10 @@ int main()
 
     double x = 200; double y = 150;
     COLORREF color_geroy = TX_BLUE;
-    double Vx = 4, Vy = 3;
+    double Vx = 1, Vy = 1;
+    double distance = 0;
+    int score = 0;
+
     double centre_x = 800 / 2;
     double centre_y = 500 / 2;
 
@@ -20,6 +26,10 @@ int main()
 
     while (!GetAsyncKeyState(VK_RETURN))
         {
+        txClearConsole ();
+        txSetFillColor (TX_BLACK);
+        txClear();
+
         x += Vx * 1;
         y += Vy * 1;
         Vx *= 0.99;
@@ -28,8 +38,15 @@ int main()
         otrazenie (&x, &y, &Vx, &Vy);
         geroy (x, y, color_geroy);
         controlirovanie (&Vx, &Vy, VK_UP, VK_DOWN, VK_RIGHT, VK_LEFT);
-        cub (centre_x - 200, centre_y, x, y);
-        cub (centre_x + 200, centre_y, x, y);
+
+        double dist = cub (centre_x - 200, centre_y, x, y);
+        if (dist <= Number and distance >= Number)
+            {
+            score ++;
+            }
+        distance = dist;
+        //cub (centre_x + 200, centre_y, x, y);
+        printf ("score = %d\n", score);
 
         txSleep(10);
         }
@@ -73,7 +90,7 @@ double controlirovanie (double* Vx, double* Vy, int up, int dow, int ri, int le)
     {
     if (GetAsyncKeyState (up))
         {
-        (*Vy)++;
+        (*Vy) += Speed;
         }
 
     if (GetAsyncKeyState (VK_CONTROL))
@@ -84,67 +101,35 @@ double controlirovanie (double* Vx, double* Vy, int up, int dow, int ri, int le)
 
     if (GetAsyncKeyState (dow))
         {
-        (*Vy)--;
+        (*Vy) -= Speed;
         }
 
     if (GetAsyncKeyState (ri))
         {
-        (*Vx)++;
+        (*Vx) += Speed;
         }
 
     if (GetAsyncKeyState (le))
         {
-        (*Vx)--;
+        (*Vx) -= Speed;
         }
 
     return 0;
     }
 
-double cub (double centre_x, double centre_y, double x, double y)
-    {
-    double distance = 0;
 
-    calculate_dist (x, y,  centre_x, centre_y, &distance);
-
-    if (distance <= 100)
-        {
-        txSetFillColor (TX_RED);
-        }
-    else
-        {
-        txSetFillColor (TX_YELLOW);
-        }
-
-    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
-    return 0;
-    }
-
-double calculate_dist (double x, double y, double x2, double y2, double *dist)
-    {
-    *dist = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
-
-    return 0;
-    }
-
-double calculate_dist2 (double x, double y, double x2, double y2)
+double calculate_dist (double x, double y, double x2, double y2)
     {
     double dist = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
 
     return dist;
     }
 
-double calculate_dist3 (double x, double y, double x2, double y2)
+double cub (double centre_x, double centre_y, double x, double y)
     {
-    return sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
-    }
+    double dist = calculate_dist (x, y,  centre_x, centre_y);
 
-
-
-double cub2 (double centre_x, double centre_y, double x, double y)
-    {
-    double distance = calculate_dist2 (x, y,  centre_x, centre_y);
-
-    if (distance <= 100)
+    if (dist <= Number)
         {
         txSetFillColor (TX_RED);
         }
@@ -154,10 +139,10 @@ double cub2 (double centre_x, double centre_y, double x, double y)
         }
 
     txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
-    return 0;
+    return dist;
     }
 
-double cub3 (double centre_x, double centre_y, double x, double y)
+/*double cub3 (double centre_x, double centre_y, double x, double y)
     {
     if (calculate_dist2 (x, y,  centre_x, centre_y) <= 100)
         {
@@ -189,6 +174,38 @@ double cub5 (double centre_x, double centre_y, double x, double y)
     txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
     return 0;
     }
+
+double cub (double centre_x, double centre_y, double x, double y)
+    {
+    double distance = 0;
+
+    calculate_dist (x, y,  centre_x, centre_y, &distance);
+
+    if (distance <= 100)
+        {
+        txSetFillColor (TX_RED);
+        }
+    else
+        {
+        txSetFillColor (TX_YELLOW);
+        }
+
+    txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
+    return 0;
+    }
+
+double calculate_dist (double x, double y, double x2, double y2, double *dist)
+    {
+    *dist = sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
+
+    return 0;
+    }
+
+double calculate_dist3 (double x, double y, double x2, double y2)
+    {
+    return sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
+    }*/
+
 
 
 
