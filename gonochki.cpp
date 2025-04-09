@@ -4,6 +4,7 @@ double phy ();
 double ypr (double *Vx, double *Vy);
 double otr (double *x, double *y, double *Vx, double *Vy);
 double circle (double x, double y);
+double trassa ();
 
 int main()
     {
@@ -22,8 +23,15 @@ double phy ()
         ypr (&Vx, &Vy);
         otr (&x, &y, &Vx, &Vy);
         circle (x,y);
+        trassa ();
 
-        txSleep (100);
+        txLine(700, 700, 700, 800);
+        if (x >= 700 and y >= 750)
+            {
+            printf ("РїРѕР±РµРґР° СЃРёРЅРёРіРѕ");
+            }
+
+        txSleep (10);
         }
 
     return 0;
@@ -33,19 +41,19 @@ double phy ()
         {
         if (GetAsyncKeyState (VK_RIGHT))
             {
-            (*Vx) ++;
+            (*Vx) += 0.5;
             }
         if (GetAsyncKeyState (VK_LEFT))
             {
-            (*Vx) --;
+            (*Vx) -= 0.5;
             }
         if (GetAsyncKeyState (VK_UP))
             {
-            (*Vy) ++;
+            (*Vy) += 0.5;
             }
         if (GetAsyncKeyState (VK_DOWN))
             {
-            (*Vy) --;
+            (*Vy) -= 0.5;
             }
         return 0;
         }
@@ -53,8 +61,8 @@ double phy ()
 
 double otr (double *x, double *y, double *Vx, double *Vy)
     {
-    *x = *x + *Vx * 1;
-    *y = *y + *Vy * 1;
+    *x = *x + *Vx * 0.99;
+    *y = *y + *Vy * 0.99;
     if (*x > 800)
             {
             *Vx = -*Vx;
@@ -81,5 +89,11 @@ double otr (double *x, double *y, double *Vx, double *Vy)
 double circle (double x, double y)
     {
     txCircle (x, y, 10);
+    return 0;
+    }
+
+double trassa ()
+    {
+    txLine (0, 0, 100, 100);
     return 0;
     }

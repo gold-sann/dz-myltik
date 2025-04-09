@@ -8,10 +8,18 @@ double geroy(double x, double y, COLORREF color_geroy);
 double controlirovanie (double* Vx, double* Vy, int up, int dow, int ri, int le);
 double cub (double centre_x, double centre_y, double x, double y);
 double calculate_dist (double x, double y, double x2, double y2);
+double invoice_table ();
 
 int main()
     {
     txCreateWindow (800, 500);
+
+    HDC back = txLoadImage ("графика для игры.bmp");
+    if (back == NULL)
+        {
+        printf("ошибка отсутствие картинки");
+        return 0;
+        }
 
     double x = 200; double y = 150;
     COLORREF color_geroy = TX_BLUE;
@@ -27,8 +35,7 @@ int main()
     while (!GetAsyncKeyState(VK_RETURN))
         {
         txClearConsole ();
-        txSetFillColor (TX_BLACK);
-        txClear();
+        txBitBlt (0, 0, back);
 
         x += Vx * 1;
         y += Vy * 1;
@@ -50,6 +57,9 @@ int main()
 
         txSleep(10);
         }
+
+    txDeleteDC(back);
+
     }
 
 double otrazenie (double* x, double* y, double* Vx, double* Vy)
@@ -140,6 +150,11 @@ double cub (double centre_x, double centre_y, double x, double y)
 
     txRectangle (centre_x - 10, centre_y - 10, centre_x + 10, centre_y + 10);
     return dist;
+    }
+
+double invoice_table ()
+    {
+    return 0;
     }
 
 /*double cub3 (double centre_x, double centre_y, double x, double y)
