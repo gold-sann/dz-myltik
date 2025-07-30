@@ -1,39 +1,87 @@
 #include <TXLib.h>
 
-double phy ();
+const COLORREF COLOR_ACID = 0x00FED7;
+#54ff00
+#cd06ff
+
+double phy (HDC vac, HDC back);
 double ypr (double *Vx, double *Vy);
-double otr (double *x, double *y, double *Vx, double *Vy);
+//double otr (double *x, double *y, double *Vx, double *Vy);
 double circle (double x, double y);
-double trassa ();
+//double trassa ();
+double mov (double* x, double* Vx, double* y, double*  Vy);
+double oil (double *Vx, double *Vy, COLORREF color);
 
 int main()
     {
-    txCreateWindow (800, 800);
-    phy ();
+    HDC vac = txLoadImage ("карта для гонок.bmp");
+    if (vac == NULL)
+        {
+        printf("отсутствие файла трасса для гонок.bmp");
+        return 0;
+        }
+
+    HDC back = txLoadImage("трасса для гонок.bmp");
+    if (back == NULL)
+        {
+        printf("отсутствие фона");
+        return 0;
+        }
+
+    txCreateWindow (1554, 797);
+    phy (vac, back);
+    txDeleteDC(vac);
+    txDeleteDC(back);
     return 0;
     }
 
-double phy ()
+double phy (HDC vac, HDC back)
     {
     double x = 400, y = 400;
     double Vx = 4, Vy = 3;
 
+    COLORREF old_color = 0;
+    COLORREF color = 0;
+
     while (!GetAsyncKeyState (VK_RETURN))
         {
+        txBitBlt (0, 0, vac);
+
+        old_color = color;
+        color = txGetPixel (x, y);
+        //printf ("color = %06X\n", (unsigned int) color);
+
+        txBitBlt (0, 0, back);
+
         ypr (&Vx, &Vy);
-        otr (&x, &y, &Vx, &Vy);
+        mov (&x, &Vx, &y, &Vy);
+        oil (&Vx, &Vy, color);
+        //otr (&x, &y, &Vx, &Vy);
+        //printf ("x, y = %lg, %lg\n", x, y);
+
         circle (x,y);
-        trassa ();
+
+        if (color == COLOR_ACID)
+            {
+            Vx /= 2;
+            Vy /= 2;
+            //txSetFillColor (TX_LIGHTRED);
+            //printf ("авария бым \n");
+            }
+        /*else
+            {
+            txSetFillColor (TX_WHITE);
+            }*/
+        //trassa ();
 
         txLine(700, 700, 700, 800);
         if (x >= 700 and y >= 750)
             {
-            printf ("РїРѕР±РµРґР° СЃРёРЅРёРіРѕ");
+            printf ("победа");
             }
 
         txSleep (10);
         }
-
     return 0;
     }
 
@@ -49,20 +97,24 @@ double phy ()
             }
         if (GetAsyncKeyState (VK_UP))
             {
-            (*Vy) += 0.5;
+            (*Vy) -= 0.5;
             }
         if (GetAsyncKeyState (VK_DOWN))
             {
-            (*Vy) -= 0.5;
+            (*Vy) += 0.5;
+            }
+        if (GetAsyncKeyState (VK_MENU))
+            {
+            (*Vy) = 0;
+            (*Vx) = 0;
             }
         return 0;
         }
 
 
-double otr (double *x, double *y, double *Vx, double *Vy)
+/*double otr (double *x, double *y, double *Vx, double *Vy)
     {
-    *x = *x + *Vx * 0.99;
-    *y = *y + *Vy * 0.99;
+
     if (*x > 800)
             {
             *Vx = -*Vx;
@@ -84,16 +136,49 @@ double otr (double *x, double *y, double *Vx, double *Vy)
             *y = 0;
             }
     return 0;
+    }*/
+
+double mov (double* x, double* Vx, double* y, double*  Vy)
+    {
+    *x = *x + *Vx;
+    *y = *y + *Vy;
+
+    *Vx = *Vx * 0.99;
+    *Vy = *Vy * 0.99;
+
+    return 0;
     }
 
 double circle (double x, double y)
     {
+    txSetColor (TX_PINK, 3);
+    txSetFillColor (TX_BLACK);
     txCircle (x, y, 10);
+    //printf ("я вызвался!!!\n");
     return 0;
     }
 
-double trassa ()
+double oil (double *Vx, double *Vy, COLORREF color)
     {
-    txLine (0, 0, 100, 100);
+    if (color == TX_BLACK)
+        {
+        if (GetAsyncKeyState (VK_RIGHT))
+                {
+                (*Vx) -= 0.9;
+                }
+            if (GetAsyncKeyState (VK_LEFT))
+                {
+                (*Vx) += 0.9;
+                }
+            if (GetAsyncKeyState (VK_UP))
+                {
+                (*Vy) += 0.9;
+                }
+            if (GetAsyncKeyState (VK_DOWN))
+                {
+                (*Vy) -= 0.9;
+                }
+        }
     return 0;
+
     }
