@@ -1,8 +1,8 @@
 #include <TXLib.h>
 
 const COLORREF COLOR_ACID = 0x00FED7;
-#54ff00
-#cd06ff
+const COLORREF COLOR_FINISH_1 = 0x00ff54;
+const COLORREF COLOR_FINISH_2 = 0xff06cd;
 
 double phy (HDC vac, HDC back);
 double ypr (double *Vx, double *Vy);
@@ -11,6 +11,7 @@ double circle (double x, double y);
 //double trassa ();
 double mov (double* x, double* Vx, double* y, double*  Vy);
 double oil (double *Vx, double *Vy, COLORREF color);
+int Finish (COLORREF color, COLORREF old_color);
 
 int main()
     {
@@ -18,6 +19,7 @@ int main()
     if (vac == NULL)
         {
         printf("отсутствие файла трасса для гонок.bmp");
+
         return 0;
         }
 
@@ -25,6 +27,7 @@ int main()
     if (back == NULL)
         {
         printf("отсутствие фона");
+
         return 0;
         }
 
@@ -32,6 +35,7 @@ int main()
     phy (vac, back);
     txDeleteDC(vac);
     txDeleteDC(back);
+
     return 0;
     }
 
@@ -45,17 +49,20 @@ double phy (HDC vac, HDC back)
 
     while (!GetAsyncKeyState (VK_RETURN))
         {
-        txBitBlt (0, 0, vac);
+        //txBitBlt (0, 0, vac);
 
         old_color = color;
-        color = txGetPixel (x, y);
-        //printf ("color = %06X\n", (unsigned int) color);
+        color = txGetPixel (x, y, vac);
+        //printf ("color = %06X, old_color = %06X\n", (unsigned int) color, (unsigned int) old_color);
+        //if (color != old_color)
+            //printf("****************************************************************\n");
 
         txBitBlt (0, 0, back);
 
         ypr (&Vx, &Vy);
         mov (&x, &Vx, &y, &Vy);
         oil (&Vx, &Vy, color);
+        Finish (color, old_color);
         //otr (&x, &y, &Vx, &Vy);
         //printf ("x, y = %lg, %lg\n", x, y);
 
@@ -108,6 +115,7 @@ double phy (HDC vac, HDC back)
             (*Vy) = 0;
             (*Vx) = 0;
             }
+
         return 0;
         }
 
@@ -155,6 +163,7 @@ double circle (double x, double y)
     txSetFillColor (TX_BLACK);
     txCircle (x, y, 10);
     //printf ("я вызвался!!!\n");
+
     return 0;
     }
 
@@ -179,6 +188,19 @@ double oil (double *Vx, double *Vy, COLORREF color)
                 (*Vy) -= 0.9;
                 }
         }
+
     return 0;
 
+    }
+
+int Finish (COLORREF color, COLORREF old_color)
+    {
+    if (old_color == COLOR_FINISH_1 and color == COLOR_FINISH_2)
+        {
+        printf("пройдено кругов******************************************************");
+
+        return 1;
+        }
+
+    return 0;
     }
