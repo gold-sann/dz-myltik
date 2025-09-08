@@ -1,3 +1,4 @@
+#define _TX_DEBUG_LOAD "\f"
 #include "TXLib.h"
 
 const double Number = 100;
@@ -14,10 +15,10 @@ int main()
     {
     txCreateWindow (800, 500);
 
-    HDC back = txLoadImage ("графика для игры.bmp");
+    HDC back = txLoadImage ("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.bmp");
     if (back == NULL)
         {
-        printf("ошибка отсутствие картинки");
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
         return 0;
         }
 

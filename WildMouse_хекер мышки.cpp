@@ -18,7 +18,7 @@ void Help (void*);
 
 int main()
     {
-    printf ("ESCAPE, RETURN\n");
+    //printf ("ESCAPE, RETURN\n");
 
     _beginthread (Help, 0, NULL);
 

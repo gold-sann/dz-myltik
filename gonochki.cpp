@@ -11,22 +11,22 @@ double circle (double x, double y);
 //double trassa ();
 double mov (double* x, double* Vx, double* y, double*  Vy);
 double oil (double *Vx, double *Vy, COLORREF color);
-int Finish (COLORREF color, COLORREF old_color);
+int Finish (COLORREF color, COLORREF old_color, int check);
 
 int main()
     {
-    HDC vac = txLoadImage ("карта для гонок.bmp");
+    HDC vac = txLoadImage ("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.bmp");
     if (vac == NULL)
         {
-        printf("отсутствие файла трасса для гонок.bmp");
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.bmp");
 
         return 0;
         }
 
-    HDC back = txLoadImage("трасса для гонок.bmp");
+    HDC back = txLoadImage("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.bmp");
     if (back == NULL)
         {
-        printf("отсутствие фона");
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
 
         return 0;
         }
@@ -47,6 +47,8 @@ double phy (HDC vac, HDC back)
     COLORREF old_color = 0;
     COLORREF color = 0;
 
+    int check = 0;
+
     while (!GetAsyncKeyState (VK_RETURN))
         {
         //txBitBlt (0, 0, vac);
@@ -62,7 +64,7 @@ double phy (HDC vac, HDC back)
         ypr (&Vx, &Vy);
         mov (&x, &Vx, &y, &Vy);
         oil (&Vx, &Vy, color);
-        Finish (color, old_color);
+        Finish (color, old_color, check);
         //otr (&x, &y, &Vx, &Vy);
         //printf ("x, y = %lg, %lg\n", x, y);
 
@@ -73,7 +75,7 @@ double phy (HDC vac, HDC back)
             Vx /= 2;
             Vy /= 2;
             //txSetFillColor (TX_LIGHTRED);
-            //printf ("авария бым \n");
+            //printf ("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ \n");
             }
         /*else
             {
@@ -84,7 +86,7 @@ double phy (HDC vac, HDC back)
         txLine(700, 700, 700, 800);
         if (x >= 700 and y >= 750)
             {
-            printf ("победа");
+            printf ("пїЅпїЅпїЅпїЅпїЅпїЅ");
             }
 
         txSleep (10);
@@ -162,7 +164,7 @@ double circle (double x, double y)
     txSetColor (TX_PINK, 3);
     txSetFillColor (TX_BLACK);
     txCircle (x, y, 10);
-    //printf ("я вызвался!!!\n");
+    //printf ("пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!\n");
 
     return 0;
     }
@@ -193,11 +195,19 @@ double oil (double *Vx, double *Vy, COLORREF color)
 
     }
 
-int Finish (COLORREF color, COLORREF old_color)
+int Finish (COLORREF color, COLORREF old_color, int check)
     {
     if (old_color == COLOR_FINISH_1 and color == COLOR_FINISH_2)
         {
-        printf("пройдено кругов******************************************************");
+        check += 1;
+        printf("РїСЂРѕР№РґРµРЅРЅРѕ РєСЂСѓРіРѕРІ:", check);
+
+        return 1;
+        }
+
+    if (color == COLOR_FINISH_1 and old_color == COLOR_FINISH_2)
+        {
+        check -= 1;
 
         return 1;
         }

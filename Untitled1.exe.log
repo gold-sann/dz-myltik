@@ -1,0 +1,104 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C8CD в функции main() в файле C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/Untitled1.cpp на строке 8. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0x6EF8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C8CD in C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe: main() at C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/Untitled1.cpp:8:
+
+      6:     txCreateWindow (800, 600);
+      7: 
+=>    8:     *(int*)0 = 0;
+      9: 
+     10:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.cpp:6:
+
+      4: int main()
+      5:     {
+=>    6:     txCreateWindow (800, 600);
+      7: 
+      8:     *(int*)0 = 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 31 2025 01:59:48, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 31 2025 01:59:51
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C8CD в функции main() в файле C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/Untitled1.cpp на строке 8. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0x6EF8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C8CD in C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe: main() at C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/Untitled1.cpp:8:
+
+      6:     txCreateWindow (800, 600);
+      7: 
+=>    8:     *(int*)0 = 0;
+      9: 
+     10:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.cpp:6:
+
+      4: int main()
+      5:     {
+=>    6:     txCreateWindow (800, 600);
+      7: 
+      8:     *(int*)0 = 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 31 2025 01:59:48, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 31 2025 01:59:51
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\Untitled1.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------

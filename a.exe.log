@@ -132,3 +132,340 @@ Run file:	C:\Users\Desktop\Documents\GitHub\dz-myltik\a.exe
 Directory:	C:\Users\Desktop\Documents\GitHub\dz-myltik
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CCE4. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x1824 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+TXLib отмечает: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 29 2025 16:34:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	May 29 2025 16:34:07
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CCE4. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x1824 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+TXLib отмечает: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 29 2025 16:34:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	May 29 2025 16:34:07
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CD56. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x5CFC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+TXLib отмечает: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 29 2025 16:38:25, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	May 29 2025 16:38:29
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CD56. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x5CFC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+TXLib отмечает: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 29 2025 16:38:25, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	May 29 2025 16:38:29
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe, файл: c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h, строка: 13788, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x1AC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+TXLib отмечает: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-27 02:03:15 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\desktop\onedrive\desktop\codeblocks\mingw\include\txlib.h
+Compiled:	May 29 2025 17:26:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	May 29 2025 17:26:12
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CEE6 в функции main(). Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x2DAC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041CEE6 in C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe: main()
+
+TXLib печалится: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Desktop\OneDrive\Desktop\TX\TXLib.h
+Compiled:	Jun 18 2025 21:44:44, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Jun 18 2025 21:44:46
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CEE6 в функции main(). Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x2DAC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041CEE6 in C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe: main()
+
+TXLib печалится: Нет информации об исходных файлах. Вы не забыли опцию -g при компиляции?
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Desktop\OneDrive\Desktop\TX\TXLib.h
+Compiled:	Jun 18 2025 21:44:44, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Jun 18 2025 21:44:47
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CEE6 в функции main() в файле C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/pinpong.cpp на строке 40. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x739C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041CEE6 in C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe: main() at C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/pinpong.cpp:40:
+
+     38:         txClearConsole ();
+     39:         txBitBlt (0, 0, back);
+=>   40:         *(int*)0 = 0;
+     41: 
+     42:         x += Vx * 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Desktop\OneDrive\Desktop\TX\TXLib.h
+Compiled:	Jun 18 2025 21:46:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Jun 18 2025 21:46:03
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0041CEE6 в функции main() в файле C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/pinpong.cpp на строке 40. Попытка записать данные по адресу NULL в модуле C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400], Instance: 0x004F52FC (32-bit), Flags: CMdRe0, Thread: 0x739C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041CEE6 in C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe: main() at C:/Users/Desktop/OneDrive/Documents/GitHub/dz-myltik/pinpong.cpp:40:
+
+     38:         txClearConsole ();
+     39:         txBitBlt (0, 0, back);
+=>   40:         *(int*)0 = 0;
+     41: 
+     42:         x += Vx * 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-05-31 01:13:58 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Desktop\OneDrive\Desktop\TX\TXLib.h
+Compiled:	Jun 18 2025 21:46:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Jun 18 2025 21:46:03
+
+Run file:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik\a.exe
+Directory:	C:\Users\Desktop\OneDrive\Documents\GitHub\dz-myltik
+
+--------------------------------------------------
