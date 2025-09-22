@@ -11,22 +11,23 @@ double circle (double x, double y);
 //double trassa ();
 double mov (double* x, double* Vx, double* y, double*  Vy);
 double oil (double *Vx, double *Vy, COLORREF color);
-int Finish (COLORREF color, COLORREF old_color, int check);
+int Finish (COLORREF color, COLORREF old_color, int* check);
+int Erasing();
 
 int main()
     {
-    HDC vac = txLoadImage ("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.bmp");
+    HDC vac = txLoadImage ("карта для гонок.bmp");
     if (vac == NULL)
         {
-        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.bmp");
+        printf("отсутствие файла трасса для гонок.bmp");
 
         return 0;
         }
 
-    HDC back = txLoadImage("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.bmp");
+    HDC back = txLoadImage("трасса для гонок.bmp");
     if (back == NULL)
         {
-        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
+        printf("отсутствие файла трасса для гонок.bmp");
 
         return 0;
         }
@@ -64,7 +65,8 @@ double phy (HDC vac, HDC back)
         ypr (&Vx, &Vy);
         mov (&x, &Vx, &y, &Vy);
         oil (&Vx, &Vy, color);
-        Finish (color, old_color, check);
+        Erasing();
+        Finish (color, old_color, &check);
         //otr (&x, &y, &Vx, &Vy);
         //printf ("x, y = %lg, %lg\n", x, y);
 
@@ -195,22 +197,37 @@ double oil (double *Vx, double *Vy, COLORREF color)
 
     }
 
-int Finish (COLORREF color, COLORREF old_color, int check)
+int Finish (COLORREF color, COLORREF old_color, int *check)
     {
     if (old_color == COLOR_FINISH_1 and color == COLOR_FINISH_2)
         {
-        check += 1;
-        printf("РїСЂРѕР№РґРµРЅРЅРѕ РєСЂСѓРіРѕРІ:", check);
-
+        *check += 1;
         return 1;
         }
+
+
+        char accoun [100] = "";
+
+        sprintf(accoun, "пройдено кругов: %d\n", *check);
+
+        txSetColor (TX_GREEN);
+        txDrawText (925, 25, 1128, 95, accoun);
 
     if (color == COLOR_FINISH_1 and old_color == COLOR_FINISH_2)
         {
-        check -= 1;
+        *check -= 1;
 
         return 1;
         }
 
+
+    return 0;
+    }
+
+int Erasing()
+    {
+    txSetColor (TX_BLACK);
+    txSetFillColor (TX_BLACK);
+    txRectangle (925, 25, 1128, 100);
     return 0;
     }

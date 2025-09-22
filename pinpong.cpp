@@ -13,12 +13,12 @@ double invoice_table ();
 
 int main()
     {
-    txCreateWindow (800, 500);
+    txCreateWindow (1554, 797S);
 
-    HDC back = txLoadImage ("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.bmp");
+    HDC back = txLoadImage ("карта для гонок.bmp");
     if (back == NULL)
         {
-        printf("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+        printf("отсутствие файла карта для гонок.bmp");
         return 0;
         }
 
